@@ -4,7 +4,8 @@ import Navbar from './_Components/navbar/Navbar'
 import Footer from './_Components/Footer/Footer'
 import { Home, User, Settings } from "lucide-react"
 import HeaderSocial from './_Components/header-social/HeaderSocial'
-
+import About from './about/page'
+import Projects from './projects/page'
  export const metadata = {
   title: "My Client Website - Home",
   description: "Professional company website showcasing services, contact details, and portfolio.",
@@ -30,11 +31,13 @@ import HeaderSocial from './_Components/header-social/HeaderSocial'
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className='flex flex-col min-h-screen justify-between'>
+      <body className='flex overflow-x-hidden flex-col min-h-screen justify-between'>
         <HeaderSocial/>
     <Navbar />
     
         <main className="">{children}</main>
+        <About />
+        <Projects />
         <Footer />
 
         
