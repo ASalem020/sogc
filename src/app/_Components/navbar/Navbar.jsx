@@ -18,7 +18,7 @@ export default function Navbar() {
       if(window.innerWidth < 768){
         scrollPoint = window.innerHeight * 0.050; 
       }else{
-        scrollPoint = window.innerHeight * 0.357; 
+        scrollPoint = window.innerHeight * 0.317; 
       }
      
 
@@ -54,7 +54,7 @@ export default function Navbar() {
            <div className='container mx-auto flex justify-between items-center'>
 
             
-            <div className="space-x-6  text-[1.1rem] flex items-center gap-2  ">
+            <div className={` ${isSticky ? "space-x-6  text-[1.1rem] flex items-center gap-2 py-2  " : "space-x-6 text-[1.4rem] flex items-center gap-2   "} transition-all duration-300 `}>
               <img
               src="/logo2 black.webp"
               alt="logo"
@@ -81,12 +81,17 @@ export default function Navbar() {
           {/* navbar for mobile */}
           <nav className='block md:hidden'>
             <div className={`
-              fixed bottom-0 left-0 right-0 bg-black z-50 transition-transform duration-500 mb-1 p-5   justify-between rounded-t-lg ${
+              fixed bottom-0 left-0 right-0 bg-black z-50 transition-transform duration-500 mb-1 p-2 pt-0   justify-between rounded-t-lg ${
                 isSticky ? " fixed bottom-0 shadow-md !my-0 " : "  "
-              } ${show ? "translate-y-3" : "translate-y-full"} ${
-                isSticky ? "" : ""
-              }`}>
-              <div className='flex justify-between items-center'>
+              } ${show ? "translate-y-3" : "translate-y-full"} `}>
+              <div className={`flex justify-between items-center gap-2 ${isSticky ? "  text-[1rem] flex items-center gap-2 py-2  " : "text-[1.2rem] py-1 flex items-center gap-2   "} transition-all duration-300 `}>
+                <img
+              src="/logo2 black.webp"
+              alt="logo"
+              width={50}
+              height={30}
+              className={` ${isSticky ? "relative block scale-130  " : "absolute scale-0"} transition-all  duration-300`}
+            />
               <Link className={`${path == '/' ? 'bg-yellow-500 text-black p-2  rounded-4xl  hover:!text-white ' : 'text-white'} hover:text-yellow-500 transition-all duration-300`} href="/">Home</Link>
               <Link className={`${path.includes('/about') ? ' bg-yellow-500 text-black p-2  rounded-4xl   hover:!text-white' : 'text-white'} hover:text-yellow-500 transition-all duration-300`} href="/about">About</Link>
               <Link className={`${path.includes('/services') ? 'bg-yellow-500 text-black p-2  rounded-4xl hover:!text-white' : 'text-white'} hover:text-yellow-500 transition-all duration-300`} href="/services">Services</Link>

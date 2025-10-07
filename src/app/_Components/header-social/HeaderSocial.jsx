@@ -23,7 +23,7 @@ export default function HeaderSocial() {
           <div className="md:space-x-4  justify-center align-baseline md:gap-3 flex ">
             <SocialMedia />
             <div className=" text-white px-4 py-2   md:block    border-l-2 ">
-              <a className=" text-white px-4 py-2 rounded-md hover:text-yellow-600  md:text-sm lg:text-lg   ">
+              <a className=" text-white px-4 py-2 rounded-md cursor-pointer hover:bg-yellow-500  hover:text-black transition-all duration-300  md:text-sm lg:text-lg   ">
                 Free Consultation
               </a>
             </div>

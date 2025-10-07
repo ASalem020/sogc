@@ -1,13 +1,51 @@
+import Image from "next/image";
 import React from "react";
 
 export default function About() {
+  const services = [
+    {
+      id: 1,
+      title: "Design & Building",
+      description: "Services currently available at the Department’s Development HUB have been enhanced.",
+      beforeIcon: "before:content-['🏢']",
+      color: "text-yellow-500",
+      after:"after:content-['01']"
+    },
+    {
+      id: 2,
+      title: "Tiling Painting",
+      description: "Will allow the applicant to access reviewer comments and objections online.",
+      beforeIcon: "before:content-['🏢']",
+      color: "text-yellow-500",
+      after:"after:content-['02']"
+    },
+    {
+      id: 3,
+      title: "Remodeling",
+      description: "Applicants and Owners can review plans and objections alongside their plan examiner virtually.",
+      beforeIcon: "before:content-['🏢']",
+      color: "text-yellow-500",
+      after:"after:content-['03']"
+    },
+    {
+      id: 4,
+      title: "Safe Construction",
+      description: "Applicants and Owners can review plans and objections alongside their plan examiner virtually.",
+      beforeIcon: "before:content-['🏢']",
+      color: "text-yellow-500",
+      after:"after:content-['04']"
+    },
+  ]
+  
   return (
     <div className="my-10 md:mt-30 md:mx-10 grid grid-cols-1  md:grid-cols-3 md:min-h-screen min-h-[50vh]">
+      {/* about content */}
       <div className="md:py-20 md:px-10 py-10 px-5 md:col-span-2">
+        {/* title */}
         <div className="relative flex flex-col md:gap-5 gap-2">
           <h1
             className='md:text-4xl text-lg text-center md:text-left font-bold  
-        before:content-[" "] before:absolute before:-left-15  px-10 before:top-5  md:before:w-20 before:w-0 before:h-1 before:bg-yellow-500 after:content-["BUILDING"] after:absolute md:after:left-6 after:left-5 md:after:-top-13 after:-top-18 md:after:text-[5rem] after:text-[3rem] after:text-yellow-300/25  after:italic   '
+        before:content-[" "] before:absolute before:-left-15  px-10 before:top-5  md:before:w-20 before:w-0 before:h-1 before:bg-yellow-500 after:content-["BUILDING"] after:absolute md:after:left-55 after:left-1/2  after:-translate-x-1/2 md:after:-top-16  after:-top-18 md:after:text-[5rem] after:text-[3rem] after:text-yellow-300/25  after:italic   '
           >
             Building it better in{" "}
             <span className="text-yellow-500 "> Concrete</span>
@@ -19,75 +57,30 @@ export default function About() {
         </div>
         {/* services  */}
         <div className=" md:mt-10 mt-20 text-center md:text-left md:grid md:grid-cols-2 flex flex-col gap-20 md:gap-0 md:gap-y-10 ">
-          <div className="flex flex-col md:gap-5 gap-2">
+          {services.map((service) => (
+          <div key={service.id} className="flex flex-col md:gap-5 gap-2 md:my-3 ">
             <div className="flex flex-col md:gap-5 gap-2 mt-2 relative ">
               <h3
-                className='text-xl font-bold before:content-["✨"] before:absolute md:before:left-5  px-10  before:left-1/2  before:-translate-x-1/2  before:-translate-y-1/2 before:-top-3 md:before:top-3
-              after:content-["01"] after:absolute md:after:left-12  md:after:-top-4 after:text-[5rem] after:text-yellow-300/25
+                className={`text-xl font-bold ${service.beforeIcon} before:absolute md:before:left-5  px-10  before:left-1/2  before:-translate-x-1/2  before:-translate-y-1/2 before:-top-3 md:before:top-3
+              ${service.after} after:absolute md:after:left-12  md:after:-top-7 after:text-[5rem] md:after:text-[6rem] after:text-yellow-300/25
               after:left-1/2  after:-translate-x-1/2  after:-translate-y-1/2 after:-top-12 
-              '
+              `}
               >
-                Design & Building
+                {service.title}
               </h3>
               <p className="text-lg font-light text-gray-500">
-                Services currently available at the Department’s Development HUB
-                have been enhanced.
+                {service.description}
               </p>
             </div>
           </div>
-          <div className="flex flex-col md:gap-5 gap-2">
-            <div className="flex flex-col md:gap-5 gap-2 mt-2 relative ">
-              <h3
-                className='text-xl font-bold before:content-["✨"] before:absolute md:before:left-5  px-10  before:left-1/2  before:-translate-x-1/2  before:-translate-y-1/2 before:-top-3 md:before:top-3
-              after:content-["02"] after:absolute md:after:left-12  md:after:-top-4 after:text-[5rem] after:text-yellow-300/25
-              after:left-1/2  after:-translate-x-1/2  after:-translate-y-1/2 after:-top-12 
-              '
-              >
-                Tiling Painting
-              </h3>
-              <p className="text-lg font-light text-gray-500">
-                Will allow the applicant to access reviewer comments and
-                objections online.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col md:gap-5 gap-2">
-            <div className="flex flex-col gap-5 relative ">
-              <h3
-                className='text-xl font-bold before:content-["✨"] before:absolute md:before:left-5  px-10  before:left-1/2  before:-translate-x-1/2  before:-translate-y-1/2 before:-top-3 md:before:top-3
-              after:content-["03"] after:absolute md:after:left-12  md:after:-top-4 after:text-[5rem] after:text-yellow-300/25
-              after:left-1/2  after:-translate-x-1/2  after:-translate-y-1/2 after:-top-12 
-              '
-              >
-                Remodeling
-              </h3>
-              <p className="text-lg font-light text-gray-500">
-                Applicants and Owners can review plans and objections alongside
-                their plan examiner virtually.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col md:gap-5 gap-2">
-            <div className="flex flex-col gap-5 relative  ">
-              <h3
-                className='text-xl font-bold before:content-["✨"] before:absolute  md:before:left-5 px-10  before:left-1/2  before:-translate-x-1/2  before:-translate-y-1/2 before:-top-3 md:before:top-3
-              after:content-["04"] after:absolute md:after:left-12  md:after:-top-4 after:text-[5rem] after:text-yellow-300/25
-              after:left-1/2  after:-translate-x-1/2  after:-translate-y-1/2 after:-top-12 
-              
-              '
-              >
-                Safe Construction
-              </h3>
-              <p className="md:text-lg text-sm font-light text-gray-500">
-                Applicants and Owners can review plans and objections alongside
-                their plan examiner virtually.
-              </p>
-            </div>
-          </div>
+          ))}
+         
+          
         </div>
       </div>
+      {/* logo */}
       <div className="p-20 md:p-0 flex justify-center items-center md:col-span-1">
-        <img src="/logo2.webp" alt="about" />
+        <Image  src="/logo2.webp" alt="about" width={1000} height={1000} />
       </div>
     </div>
   );
