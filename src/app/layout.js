@@ -33,9 +33,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className='flex overflow-x-hidden flex-col min-h-screen justify-between'>
         <HeaderSocial/>
-    <Navbar />
     
-        <main className="">{children}</main>
+        <main className="relative md:mt-7">
+    <Navbar />
+          {children}
+          </main>
         <About />
         <Projects />
         <Footer />

@@ -6,7 +6,7 @@ import HeroCarousel from "./_Components/HeroCarousel/HeroCarousel"
 
 export default function HomePage() {
   return (
-    <section className="md:mt-30">
+    <section className="">
     <HeroCarousel />
 
     </section>

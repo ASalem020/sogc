@@ -18,7 +18,7 @@ export default function Navbar() {
       if(window.innerWidth < 768){
         scrollPoint = window.innerHeight * 0.050; 
       }else{
-        scrollPoint = window.innerHeight * 0.405; 
+        scrollPoint = window.innerHeight * 0.357; 
       }
      
 
@@ -46,17 +46,23 @@ export default function Navbar() {
     <header >
       {/* navbar for desktop */}
               <nav
-      className={`absolute my-19 text-white hidden md:block  left-0 right-0 bg-black z-50 transition-transform duration-500 p-2  container mx-auto  justify-between rounded-[150px] ${
+      className={`absolute  text-white hidden md:block -top-11  left-0 right-0 bg-black z-50 transition-transform duration-500 p-2  container mx-auto  justify-between rounded-[150px] ${
         isSticky ? " fixed top-0 shadow-md !my-0 " : "  "
-      } ${show ? "translate-y-3" : "-translate-y-full"} ${
-        isSticky ? "" : ""
-      }`}
+      } ${show ? "translate-y-3" : "-translate-y-full"}`}
     >
 
            <div className='container mx-auto flex justify-between items-center'>
 
             
-            <div className="space-x-6  text-[1.4rem]  ">
+            <div className="space-x-6  text-[1.1rem] flex items-center gap-2  ">
+              <img
+              src="/logo2 black.webp"
+              alt="logo"
+              width={50}
+              height={30}
+              className={` ${isSticky ? "relative block scale-130  " : "absolute scale-0"} transition-all  duration-300`}
+            />
+             
               <Link className={`${path == '/' ? 'bg-yellow-500 text-black p-2  rounded-4xl  hover:!text-white ' : 'text-white'} hover:text-yellow-500 transition-all duration-300`} href="/">Home</Link>
               <Link className={`${path.includes('/about') ? ' bg-yellow-500 text-black p-2  rounded-4xl   hover:!text-white' : 'text-white'} hover:text-yellow-500 transition-all duration-300`} href="/about">About</Link>
               <Link className={`${path.includes('/services') ? 'bg-yellow-500 text-black p-2  rounded-4xl hover:!text-white' : 'text-white'} hover:text-yellow-500 transition-all duration-300`} href="/services">Services</Link>
