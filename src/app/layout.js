@@ -31,6 +31,8 @@ import Projects from './projects/page'
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
       <body className='flex overflow-x-hidden flex-col min-h-screen justify-between'>
         <HeaderSocial/>
     

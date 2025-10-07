@@ -132,3 +132,17 @@
   
 }
 
+
+/* Simulate hover behavior for touch devices */
+@media (hover: none) {
+  .hoverable:active,
+  .hoverable:focus {
+    @apply scale-105 brightness-95 transition-transform duration-300;
+  }
+
+  /* Optional: group-hover simulation */
+  .hoverable:active .group-hover\\:-translate-y-2,
+  .hoverable:focus .group-hover\\:-translate-y-2 {
+    @apply -translate-y-2;
+  }
+}
