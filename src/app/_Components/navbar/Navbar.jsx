@@ -63,16 +63,16 @@ export default function Navbar() {
               className={` ${isSticky ? "relative block scale-130  " : "absolute scale-0"} transition-all  duration-300`}
             />
              
-              <Link className={`${path == '/' ? 'bg-yellow-500 text-black p-2  rounded-4xl  hover:!text-white ' : 'text-white'} hover:text-yellow-500 transition-all duration-300`} href="/">Home</Link>
-              <Link className={`${path.includes('/about') ? ' bg-yellow-500 text-black p-2  rounded-4xl   hover:!text-white' : 'text-white'} hover:text-yellow-500 transition-all duration-300`} href="/about">About</Link>
-              <Link className={`${path.includes('/services') ? 'bg-yellow-500 text-black p-2  rounded-4xl hover:!text-white' : 'text-white'} hover:text-yellow-500 transition-all duration-300`} href="/services">Services</Link>
-              <Link className={`${path.includes('/contact') ? 'bg-yellow-500 text-black p-2  rounded-4xl  hover:!text-white' : 'text-white'} hover:text-yellow-500 transition-all duration-300`} href="/contact">Contact</Link>
+              <Link className={`${path == '/' ? 'bg-yellow-500 text-black p-2  rounded-4xl  hover:!text-white ' : 'text-white'} hover:text-yellow-500 active:text-yellow-500 transition-all duration-300`} href="/">Home</Link>
+              <Link className={`${path.includes('/about') ? ' bg-yellow-500 text-black p-2  rounded-4xl   hover:!text-white' : 'text-white'} hover:text-yellow-500 active:text-yellow-500 transition-all duration-300`} href="/about">About</Link>
+              <Link className={`${path.includes('/services') ? 'bg-yellow-500 text-black p-2  rounded-4xl hover:!text-white' : 'text-white'} hover:text-yellow-500 active:text-yellow-500 transition-all duration-300`} href="/services">Services</Link>
+              <Link className={`${path.includes('/contact') ? 'bg-yellow-500 text-black p-2  rounded-4xl  hover:!text-white' : 'text-white'} hover:text-yellow-500 active:text-yellow-500 transition-all duration-300`} href="/contact">Contact</Link>
             </div>
             <div>
             {/* cart icon */}
             <div className='flex items-center  gap-5'>
-              <FaShoppingCart className="w-8 h-8 hover:text-yellow-500 transition-all duration-300 cursor-pointer " />
-              <button className='rounded-4xl text-[1.4rem] p-2  bg-yellow-500 text-black hover:bg-amber-50 transition-all duration-300 cursor-pointer '>Start New Project</button>
+              <FaShoppingCart className="w-8 h-8 hover:text-yellow-500 active:text-yellow-500 active:scale-95 transition-all duration-300 cursor-pointer " />
+              <button className='rounded-4xl text-[1.4rem] p-2  bg-yellow-500 text-black hover:bg-amber-50 active:bg-amber-50 active:scale-95 transition-all duration-300 cursor-pointer '>Start New Project</button>
             </div>
             </div>
            </div>
@@ -92,10 +92,10 @@ export default function Navbar() {
               height={30}
               className={` ${isSticky ? "relative block scale-130  " : "absolute scale-0"} transition-all  duration-300`}
             />
-              <Link className={`${path == '/' ? 'bg-yellow-500 text-black p-2  rounded-4xl  hover:!text-white ' : 'text-white'} hover:text-yellow-500 transition-all duration-300`} href="/">Home</Link>
-              <Link className={`${path.includes('/about') ? ' bg-yellow-500 text-black p-2  rounded-4xl   hover:!text-white' : 'text-white'} hover:text-yellow-500 transition-all duration-300`} href="/about">About</Link>
-              <Link className={`${path.includes('/services') ? 'bg-yellow-500 text-black p-2  rounded-4xl hover:!text-white' : 'text-white'} hover:text-yellow-500 transition-all duration-300`} href="/services">Services</Link>
-              <Link className={`${path.includes('/contact') ? 'bg-yellow-500 text-black p-2  rounded-4xl  hover:!text-white' : 'text-white'} hover:text-yellow-500 transition-all duration-300`} href="/contact">Contact</Link>
+              <Link className={`${path == '/' ? 'bg-yellow-500 text-black p-2  rounded-4xl  hover:!text-white ' : 'text-white'} hover:text-yellow-500 active:text-yellow-500 transition-all duration-300`} href="/">Home</Link>
+              <Link className={`${path.includes('/about') ? ' bg-yellow-500 text-black p-2  rounded-4xl   hover:!text-white' : 'text-white'} hover:text-yellow-500 active:text-yellow-500 transition-all duration-300`} href="/about">About</Link>
+              <Link className={`${path.includes('/services') ? 'bg-yellow-500 text-black p-2  rounded-4xl hover:!text-white' : 'text-white'} hover:text-yellow-500 active:text-yellow-500 transition-all duration-300`} href="/services">Services</Link>
+              <Link className={`${path.includes('/contact') ? 'bg-yellow-500 text-black p-2  rounded-4xl  hover:!text-white' : 'text-white'} hover:text-yellow-500 active:text-yellow-500 transition-all duration-300`} href="/contact">Contact</Link>
 
               </div>
               {/* <FaBars className="w-8 h-8 text-white hover:text-yellow-500 transition-all duration-300 cursor-pointer " /> */}

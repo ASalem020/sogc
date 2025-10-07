@@ -1,5 +1,58 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Image from "next/image";
+
+function FlipButton() {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    <button 
+      className="relative group cursor-pointer perspective w-fit"
+      onTouchStart={() => setIsFlipped(true)}
+      onTouchEnd={() => setIsFlipped(false)}
+    >
+      <div className={`relative preserve-3d transition-transform duration-500 ${isFlipped ? 'rotate-x-180 scale-110' : 'group-hover:rotate-x-180 group-hover:scale-110'}`}>
+        {/* Front side */}
+        <span className="bg-yellow-500 lg:text-lg text-sm cursor-pointer text-black px-6 py-2 rounded-full block backface-hidden">
+          Request Custom Service
+        </span>
+
+        {/* Back side */}
+        <span className="bg-black text-yellow-500 lg:text-lg text-sm px-6 py-2 cursor-pointer rounded-full block absolute inset-0 rotate-x-180 backface-hidden">
+          Contact Us Now!
+        </span>
+      </div>
+    </button>
+  );
+}
+
+function ServiceCard({ service }) {
+  const [isActive, setIsActive] = useState(false);
+
+  return (
+    <div
+      className="flex flex-col md:gap-5 gap-2 my-5 relative group"
+      onTouchStart={() => setIsActive(true)}
+      onTouchEnd={() => setIsActive(false)}
+    >
+      <Image
+        width={1000}
+        height={1000}
+        className="rounded-lg h-[12rem] md:h-[15rem] lg:h-[18rem] relative object-cover object-center"
+        src={`${service.image}`}
+        alt="blog"
+      />
+      <div className={`absolute shadow-lg md:p-5 lg:min-h-[145px] flex flex-col gap-2 items-center lg:top-50 top-35 lg:left-10 lg:right-10 left-5 right-5 bg-white transition-all duration-300 p-3 border-b-yellow-500 rounded-lg ${isActive ? 'border-b-4 -translate-y-2' : 'group-hover:border-b-4 group-hover:-translate-y-2'}`}>
+        <h3 className="lg:text-xl text-sm font-bold text-center">
+          {service.title} <span className="text-yellow-500">{service.yellowtitle}</span>
+        </h3>
+        <p className="lg:text-[16px] text-sm font-light text-gray-500 text-center">
+          {service.description}
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export default function Services() {
   const services = [
@@ -67,45 +120,12 @@ export default function Services() {
               Homeowners can have confidence in their choice of a metal roofing
               Contractor knowing they have met certain requirements.
             </p>
-            <button className="relative  group cursor-pointer perspective w-fit">
-              <div className="relative preserve-3d group-hover:rotate-x-180 group-hover:scale-110 transition-transform duration-500">
-                {/* Front side */}
-                <span className="bg-yellow-500 lg:text-lg text-sm cursor-pointer text-black px-6 py-2 rounded-full block backface-hidden">
-                  Request Custom Service
-                </span>
-
-                {/* Back side */}
-                <span className="bg-black text-yellow-500 lg:text-lg text-sm px-6 py-2 cursor-pointer rounded-full block absolute inset-0 rotate-x-180 backface-hidden ">
-Contact Us Now!</span>
-              </div>
-            </button>
+            <FlipButton />
           </div>
 
           {/* Service cards */}
           {services.map((service) => (
-            <div
-              key={service.id}
-              className="flex flex-col md:gap-5 gap-2 my-5 relative group"
-            >
-              <Image
-                width={1000}
-                height={1000}
-                className="rounded-lg h-[12rem]  md:h-[15rem] lg:h-[18rem]    relative   object-cover object-center"
-                src={`${service.image}`}
-                alt="blog"
-              />
-              <div className="absolute shadow-lg md:p-5 lg:min-h-[145px]  flex flex-col gap-2 items-center  lg:top-50 top-35 lg:left-10 lg:right-10 left-5  right-5   bg-white transition-all duration-300  group-hover:border-b-4 group-hover:border-b-yellow-500 group-hover:-translate-y-2 p-3 border-b-yellow-500  rounded-lg">
-                <h3
-                  className={` lg:text-xl text-sm font-bold text-center
-                `}
-                >
-                  {service.title} <span className="text-yellow-500">{service.yellowtitle}</span>
-                </h3>
-                <p className="lg:text-[16px] text-sm font-light text-gray-500 text-center">
-                  {service.description}
-                </p>
-              </div>
-            </div>
+            <ServiceCard key={service.id} service={service} />
           ))}
         </div>
       </div>

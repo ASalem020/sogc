@@ -10,6 +10,12 @@ import Projects from './projects/page'
   title: "My Client Website - Home",
   description: "Professional company website showcasing services, contact details, and portfolio.",
   keywords: "company website, services, contact, portfolio",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
   openGraph: {
     title: "My Client Website",
     description: "Professional company website with modern design.",
@@ -31,8 +37,6 @@ import Projects from './projects/page'
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
       <body className='flex overflow-x-hidden flex-col min-h-screen justify-between'>
         <HeaderSocial/>
     

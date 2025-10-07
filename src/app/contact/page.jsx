@@ -73,7 +73,7 @@ export default function Contact() {
 
       <div className="flex flex-col md:flex-row gap-10">
         {/* --- FORM --- */}
-        <div className="w-full md:w-1/2 bg-neutral-900 border border-yellow-400/40 p-8 rounded-2xl shadow-[0_0_30px_rgba(255,255,0,0.1)] relative overflow-hidden transition hover:translate-y-[-4px] hover:shadow-[0_0_40px_rgba(255,255,0,0.25)]">
+        <div className="w-full md:w-1/2 bg-neutral-900 border border-yellow-400/40 p-8 rounded-2xl shadow-[0_0_30px_rgba(255,255,0,0.1)] relative overflow-hidden transition hover:translate-y-[-4px] hover:shadow-[0_0_40px_rgba(255,255,0,0.25)] active:translate-y-[-4px] active:shadow-[0_0_40px_rgba(255,255,0,0.25)]">
           {showSuccess && (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/90 backdrop-blur-sm z-10 text-center text-yellow-400 animate-fadeIn rounded-2xl">
               <div className="text-5xl mb-3">✅</div>
@@ -149,7 +149,7 @@ export default function Contact() {
                     className={`px-3 py-1 rounded-full text-sm font-semibold border transition ${
                       formData.subject === s
                         ? "bg-yellow-400 text-black border-yellow-400"
-                        : "border-yellow-500/40 text-yellow-300 hover:bg-yellow-500/20"
+                        : "border-yellow-500/40 text-yellow-300 hover:bg-yellow-500/20 active:bg-yellow-500/20"
                     }`}
                   >
                     {s}
@@ -192,7 +192,7 @@ export default function Contact() {
         </div>
 
         {/* --- INFO --- */}
-        <div className="w-full md:w-1/2 relative bg-[url('/logo2.webp')] bg-cover bg-center rounded-2xl overflow-hidden border border-yellow-400/40 shadow-[0_0_30px_rgba(255,255,0,0.15)] transition hover:translate-y-[-4px] hover:shadow-[0_0_40px_rgba(255,255,0,0.25)]">
+        <div className="w-full md:w-1/2 relative bg-[url('/logo2.webp')] bg-cover bg-center rounded-2xl overflow-hidden border border-yellow-400/40 shadow-[0_0_30px_rgba(255,255,0,0.15)] transition hover:translate-y-[-4px] hover:shadow-[0_0_40px_rgba(255,255,0,0.25)] active:translate-y-[-4px] active:shadow-[0_0_40px_rgba(255,255,0,0.25)]">
           <div className="absolute inset-0 bg-black/70"></div>
           <div className="relative z-10 h-full flex flex-col justify-between p-8 text-gray-100">
             <div>
@@ -204,11 +204,11 @@ export default function Contact() {
                 عامًا، مقترحًا، أو دعمًا فنيًا.
               </p>
               <div className="space-y-4">
-                <div className="flex items-center justify-end gap-3 bg-yellow-500/10 border border-yellow-400/30 rounded-xl p-3 hover:bg-yellow-500/20 transition">
+                <div className="flex items-center justify-end gap-3 bg-yellow-500/10 border border-yellow-400/30 rounded-xl p-3 hover:bg-yellow-500/20 active:bg-yellow-500/20 transition">
                   <h4 className="text-sm md:text-2xl text-yellow-300">info@sogc.com</h4>
                   <i className="fa-solid fa-envelope text-yellow-400"></i>
                 </div>
-                <div className="flex items-center justify-end gap-3 bg-yellow-500/10 border border-yellow-400/30 rounded-xl p-3 hover:bg-yellow-500/20 transition">
+                <div className="flex items-center justify-end gap-3 bg-yellow-500/10 border border-yellow-400/30 rounded-xl p-3 hover:bg-yellow-500/20 active:bg-yellow-500/20 transition">
                   <h4 className="text-sm text-yellow-300">+20 1092332047</h4>
                   <i className="fa-solid fa-phone text-yellow-400"></i>
                 </div>

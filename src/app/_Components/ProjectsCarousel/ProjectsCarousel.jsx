@@ -94,7 +94,7 @@ export default function ProjectsCarousel() {
 >
   <CarouselContent>
     {projects.map((project)=>(
-      <CarouselItem className="md:basis-1/3 lg:basis-1/4 basis-1/2  "><ProjectCard key={project.id} project={project} /></CarouselItem>
+      <CarouselItem key={project.id}  className="md:basis-1/3 lg:basis-1/4 basis-1/2  "><ProjectCard  project={project} /></CarouselItem>
     ))}
     
   </CarouselContent>
