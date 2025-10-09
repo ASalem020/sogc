@@ -3,7 +3,7 @@ import ProjectsCarousel from '../_Components/ProjectsCarousel/ProjectsCarousel'
 
 export default function Projects() {
   return (
-    <section className=' pt-10 pb-4   bg-yellow-500'>
+    <section className=' pt-10 pb-4   bg-gray-100'>
         <div className='md:mx-10 md:py-20 md:px-10 flex flex-col gap-12' >
       <div className='relative flex flex-col'>
   

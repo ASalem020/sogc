@@ -48,7 +48,7 @@ export default function SocialMedia() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.name}
-            className={`transition-all hover:scale-110 duration-300  rounded-2xl p-2 text-gray-500 ${social.color} ${social.bg} `}
+            className={`transition-all hover:-translate-y-1 hover:scale-110 duration-300  rounded-2xl p-2 text-gray-500 ${social.color} ${social.bg} `}
           >
             <Icon className="w-6 h-6" />
           </a>

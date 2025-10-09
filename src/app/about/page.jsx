@@ -8,7 +8,7 @@ export default function About() {
       title: "Design & Building",
       description: "Services currently available at the Department’s Development HUB have been enhanced.",
       beforeIcon: "before:content-['🏢']",
-      color: "text-yellow-500",
+      color: "text-black",
       after:"after:content-['01']"
     },
     {
@@ -16,7 +16,7 @@ export default function About() {
       title: "Tiling Painting",
       description: "Will allow the applicant to access reviewer comments and objections online.",
       beforeIcon: "before:content-['🏢']",
-      color: "text-yellow-500",
+      color: "text-black",
       after:"after:content-['02']"
     },
     {
@@ -24,7 +24,7 @@ export default function About() {
       title: "Remodeling",
       description: "Applicants and Owners can review plans and objections alongside their plan examiner virtually.",
       beforeIcon: "before:content-['🏢']",
-      color: "text-yellow-500",
+      color: "text-black",
       after:"after:content-['03']"
     },
     {
@@ -32,7 +32,7 @@ export default function About() {
       title: "Safe Construction",
       description: "Applicants and Owners can review plans and objections alongside their plan examiner virtually.",
       beforeIcon: "before:content-['🏢']",
-      color: "text-yellow-500",
+      color: "text-black",
       after:"after:content-['04']"
     },
   ]
@@ -45,10 +45,10 @@ export default function About() {
         <div className="relative flex flex-col md:gap-5 gap-2">
           <h1
             className='md:text-4xl text-lg text-center md:text-left font-bold  
-        before:content-[" "] before:absolute before:-left-15  px-10 before:top-5  md:before:w-20 before:w-0 before:h-1 before:bg-yellow-500 after:content-["BUILDING"] after:absolute md:after:left-55 after:left-1/2  after:-translate-x-1/2 md:after:-top-16  after:-top-18 md:after:text-[5rem] after:text-[3rem] after:text-yellow-300/25  after:italic   '
+        before:content-[" "] before:absolute before:-left-15  px-10 before:top-5  md:before:w-20 before:w-0 before:h-1 before:bg-black after:content-["BUILDING"] after:absolute md:after:left-55 after:left-1/2  after:-translate-x-1/2 md:after:-top-16  after:-top-18 md:after:text-[5rem] after:text-[3rem] after:text-black/25  after:italic   '
           >
             Building it better in{" "}
-            <span className="text-yellow-500 "> Concrete</span>
+            <span className="text-black "> Concrete</span>
           </h1>
           <p className="text-lg text-center md:text-left">
             The Department of Buildings promotes the safety building codes that
@@ -62,7 +62,7 @@ export default function About() {
             <div className="flex flex-col md:gap-5 gap-2 mt-2 relative ">
               <h3
                 className={`text-xl font-bold ${service.beforeIcon} before:absolute md:before:left-5  px-10  before:left-1/2  before:-translate-x-1/2  before:-translate-y-1/2 before:-top-3 md:before:top-3
-              ${service.after} after:absolute md:after:left-12  md:after:-top-7 after:text-[5rem] md:after:text-[6rem] after:text-yellow-300/25
+              ${service.after} after:absolute md:after:left-12  md:after:-top-7 after:text-[5rem] md:after:text-[6rem] after:text-black/25
               after:left-1/2  after:-translate-x-1/2  after:-translate-y-1/2 after:-top-12 
               `}
               >
@@ -80,7 +80,7 @@ export default function About() {
       </div>
       {/* logo */}
       <div className="p-20 md:p-0 flex justify-center items-center md:col-span-1">
-        <Image  src="/logo2.webp" alt="about" width={1000} height={1000} />
+        <Image  src="/png 1.png" alt="about" width={1000} height={1000} className="w-full h-full md:w-[70%] md:h-[70%]" />
       </div>
     </div>
   );

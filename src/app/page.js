@@ -10,7 +10,7 @@ import Services from "./services/page"
 
 export default function HomePage() {
   return (
-    <section className="line-clamp-1">
+    <section className="">
     <HeroCarousel />
     <About />
     <Services />

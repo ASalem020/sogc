@@ -13,12 +13,12 @@ function FlipButton() {
     >
       <div className={`relative preserve-3d transition-transform duration-500 ${isFlipped ? 'rotate-x-180 scale-110' : 'group-hover:rotate-x-180 group-hover:scale-110'}`}>
         {/* Front side */}
-        <span className="bg-yellow-500 lg:text-lg text-sm cursor-pointer text-black px-6 py-2 rounded-full block backface-hidden">
+        <span className="bg-white border-2 border-black lg:text-lg text-sm cursor-pointer text-black px-6 py-2 rounded-full block backface-hidden">
           Request Custom Service
         </span>
 
         {/* Back side */}
-        <span className="bg-black text-yellow-500 lg:text-lg text-sm px-6 py-2 cursor-pointer rounded-full block absolute inset-0 rotate-x-180 backface-hidden">
+        <span className="bg-black text-white lg:text-lg text-sm px-6 py-2 cursor-pointer rounded-full block absolute inset-0 rotate-x-180 backface-hidden">
           Contact Us Now!
         </span>
       </div>
@@ -42,9 +42,9 @@ function ServiceCard({ service }) {
         src={`${service.image}`}
         alt="blog"
       />
-      <div className={`absolute shadow-lg md:p-5 lg:min-h-[145px] flex flex-col gap-2 items-center lg:top-50 top-35 lg:left-10 lg:right-10 left-5 right-5 bg-white transition-all duration-300 p-3 border-b-yellow-500 rounded-lg ${isActive ? 'border-b-4 -translate-y-2' : 'group-hover:border-b-4 group-hover:-translate-y-2'}`}>
+      <div className={`absolute shadow-lg md:p-5 lg:min-h-[145px] flex flex-col gap-2 items-center lg:top-50 top-35 lg:left-10 lg:right-10 left-5 right-5 bg-white transition-all duration-300 p-3 border-b-black rounded-lg ${isActive ? 'border-b-4 -translate-y-2' : 'group-hover:border-b-4 group-hover:-translate-y-2'}`}>
         <h3 className="lg:text-xl text-sm font-bold text-center">
-          {service.title} <span className="text-yellow-500">{service.yellowtitle}</span>
+          {service.title} <span className="text-gray-400">{service.blacke}</span>
         </h3>
         <p className="lg:text-[16px] text-sm font-light text-gray-500 text-center">
           {service.description}
@@ -59,7 +59,7 @@ export default function Services() {
     {
       id: 1,
       title: "Design &",
-      yellowtitle: "Building",
+      blacke: "Building",
       description:
         "Services currently available at the Department’s Development HUB have been enhanced.",
       image: "/herocar3.webp",
@@ -67,7 +67,7 @@ export default function Services() {
     {
       id: 2,
       title: "Tiling",
-      yellowtitle: "Painting",
+      blacke: "Painting",
       description:
         "Will allow the applicant to access reviewer comments and objections online.",
       image: "/herocar2.jpg",
@@ -75,7 +75,7 @@ export default function Services() {
     {
       id: 3,
       title: "Condo ",
-      yellowtitle: "Remodeling",
+      blacke: "Remodeling",
       description:
         "Applicants and Owners can review plans and objections alongside their plan examiner virtually.",
       image: "/herocar1.jpg",
@@ -83,7 +83,7 @@ export default function Services() {
     {
       id: 4,
       title: "Safe",
-      yellowtitle: "Construction",
+      blacke: "Construction",
       description:
         "Applicants and Owners can review plans and objections alongside their plan examiner virtually.",
       image: "/herocar2.jpg",
@@ -91,7 +91,7 @@ export default function Services() {
     {
       id: 5,
       title: "Interior ",
-      yellowtitle: "Design",
+      blacke: "Design",
       description:
         "Applicants and Owners can review plans and objections alongside their plan examiner virtually.",
       image: "/herocar1.jpg",
@@ -107,12 +107,12 @@ export default function Services() {
             <h1
               className='md:text-3xl lg:text-4xl text-2xl text-center md:text-left font-bold  
               before:content-[" "] before:absolute before:-left-15 px-10 before:top-5  
-              md:before:w-20 before:w-0 before:h-1 before:bg-yellow-500 
+              md:before:w-20 before:w-0 before:h-1 before:bg-black 
               after:content-["SERVICES"] after:absolute md:after:left-55 after:left-1/2  
               after:-translate-x-1/2 md:after:-top-16  after:-top-18 
-              md:after:text-[5rem] after:text-[3rem] after:text-yellow-300/25 after:italic'
+              md:after:text-[5rem] after:text-[3rem] after:text-black/25 after:italic'
             >
-              Our <span className="text-yellow-500"> Services</span>
+              Our <span className="text-black"> Services</span>
             </h1>
             <p className="lg:text-lg text-sm text-center md:text-left">
               With over thirty years of experience in residential renovation
