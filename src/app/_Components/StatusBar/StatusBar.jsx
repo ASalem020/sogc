@@ -19,17 +19,17 @@ export default function StatusBar() {
   return (
     <section
       ref={ref}
-      className="bg-gray-50 py-16 grid grid-cols-4  items-center  text-center"
+      className="bg-gray-50 py-16 grid grid-cols-4 shadow-lg   items-center  text-center"
     >
       {stats.map((item, i) => (
         <div
           key={i}
-          className={`flex flex-col items-center w-full   p-6    transition-all duration-300`}
+          className={`flex flex-col items-center w-full   md:p-6    transition-all duration-300`}
         >
-          <h3 className={`text-4xl font-extrabold  `}>
+          <h3 className={`md:text-4xl text-xl font-extrabold  `}>
             {inView ? <CountUp end={item.value} duration={5} /> : 0}+
           </h3>
-          <p className="text-gray-700 font-semibold mt-2">{item.title}</p>
+          <p className="text-gray-700 font-semibold mt-2 md:text-lg text-sm">{item.title}</p>
         </div>
       ))}
     </section>
