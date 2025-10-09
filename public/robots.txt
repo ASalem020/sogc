@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.sogc-construction.com
+
+# Sitemaps
+Sitemap: https://www.sogc-construction.com/sitemap.xml
