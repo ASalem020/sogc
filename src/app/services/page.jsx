@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import Image from "next/image";
+import PartnersCarousel from "../_Components/PartnersCarousel/PartnersCarousel";
 
 function FlipButton() {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -128,6 +129,7 @@ export default function Services() {
             <ServiceCard key={service.id} service={service} />
           ))}
         </div>
+        <PartnersCarousel />
       </div>
     </div>
   );

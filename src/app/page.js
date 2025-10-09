@@ -7,12 +7,13 @@ import About from "./about/page"
 import Projects from "./projects/page"
 import Contact from "./contact/page"
 import Services from "./services/page"
-
+import StatusBar from "./_Components/StatusBar/StatusBar"
 export default function HomePage() {
   return (
     <section className="">
     <HeroCarousel />
     <About />
+    <StatusBar />
     <Services />
     <Projects />
     <Contact />

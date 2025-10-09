@@ -120,6 +120,20 @@ export default function Navbar() {
             >
               Contact
             </Link>
+            <Link
+              href="/faq"
+              className={`relative inline-block text-lg font-semibold transition-all duration-300
+    ${
+      path.includes("/faq")
+        ? "text-black bg-white p-2 rounded-4xl"
+        : `text-white after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px]
+    after:bg-current after:transition-all after:duration-300 hover:after:w-full hover:-translate-y-1 duration-500 transition-all  `
+    }
+    
+  `}
+            >
+              FAQ
+            </Link>
           </div>
           <div>
             {/* cart icon */}
@@ -202,6 +216,17 @@ export default function Navbar() {
   `}
 >
   Contact
+</Link>
+<Link
+  href="/faq"
+  className={`relative inline-block text-lg font-semibold transition-all duration-300 
+    ${path.includes('/faq') ? 'text-black bg-white p-2 rounded-4xl' : 'text-white'}
+    hover:-translate-y-1 
+    after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px]
+    after:bg-current after:transition-all after:duration-300 hover:after:w-full
+  `}
+>
+  FAQ
 </Link>
           </div>
           {/* <FaBars className="w-8 h-8 text-white hover:-translate-y-1 hover:border-b-2  transition-all duration-300 cursor-pointer " /> */}

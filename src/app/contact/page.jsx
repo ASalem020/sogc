@@ -60,7 +60,7 @@ export default function Contact() {
   const subjectSuggestions = ["استفسار", "شكوى", "مقترح", "دعم فني"];
 
   return (
-    <section className=" bg-gray-200  px-3 text-end md:px-10 lg:px-20  py-16 font-[Cairo]">
+    <section className="   px-3 text-end md:px-10 lg:px-20  py-16 font-[Cairo]">
       <div className="container mx-auto">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-black mb-3">

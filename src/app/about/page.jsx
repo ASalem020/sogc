@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import FAQAccordion from "../_Components/FAQAccordion/FAQAccordion";
 
 export default function About() {
   const services = [
@@ -38,7 +39,9 @@ export default function About() {
   ]
   
   return (
-    <div className="my-10 md:mt-30 md:mx-10 grid grid-cols-1  md:grid-cols-3 md:min-h-screen min-h-[50vh]">
+    <div className="bg-gray-100">
+
+    <div className="my-10  md:mt-30 md:mx-10 grid grid-cols-1  md:grid-cols-3 md:min-h-screen min-h-[50vh]">
       {/* about content */}
       <div className="md:py-20 md:px-10 py-10 px-5 md:col-span-2">
         {/* title */}
@@ -82,6 +85,11 @@ export default function About() {
       <div className="p-20 md:p-0 flex justify-center items-center md:col-span-1">
         <Image  src="/png 1.png" alt="about" width={1000} height={1000} className="w-full h-full md:w-[70%] md:h-[70%]" />
       </div>
+
     </div>
+    <FAQAccordion />  
+    
+    </div>
+
   );
 }
