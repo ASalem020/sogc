@@ -7,7 +7,7 @@ import HeaderSocial from './_Components/header-social/HeaderSocial'
 import About from './about/page'
 import Projects from './projects/page'
 export const metadata = {
-  title: "SOGC Construction & Consultants | Building Egypt’s Future",
+  title: "SOGC Construction & Consultants | Building Egypt’s Future | Professional Construction Company in Egypt",
   description:
     "SOGC Construction & Consultants is a leading Egyptian company specializing in construction, engineering, and project consulting. We deliver high-quality, innovative, and sustainable solutions for clients across Egypt.",
   keywords: [
@@ -19,6 +19,14 @@ export const metadata = {
     "SOGC Projects",
     "Building Contractors Egypt",
     "SOGC Construction & Consultants",
+    "SOGC Construction",
+    "construction company Egypt",
+    "building contractors Egypt",
+    "Suez construction company",
+    "cairo construction company",
+    "engineering services Egypt",
+    "architecture and design",
+    "construction projects",
   ],
   viewport: {
     width: "device-width",
@@ -27,7 +35,7 @@ export const metadata = {
     userScalable: true,
   },
   openGraph: {
-    title: "SOGC Construction & Consultants | Building Egypt’s Future",
+    title: "SOGC Construction & Consultants ",
     description:
       "Explore SOGC Construction & Consultants — your trusted partner for construction and consulting services across Egypt.",
     url: "https://www.sogc-construction.com",
@@ -40,7 +48,7 @@ export const metadata = {
         alt: "SOGC Construction & Consultants",
       },
     ],
-    locale: "en_US",
+    locale: "en_EG",
     type: "website",
   },
   twitter: {
