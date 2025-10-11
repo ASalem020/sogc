@@ -9,5 +9,6 @@ export default function robots() {
       },
     ],
     sitemap: "https://www.sogc-construction.com/sitemap.xml",
+    host: "https://www.sogc-construction.com",
   };
 }
