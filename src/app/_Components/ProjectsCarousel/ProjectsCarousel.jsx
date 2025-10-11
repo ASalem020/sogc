@@ -9,7 +9,12 @@ import {
   } from "@/components/ui/carousel"
   import Autoplay from "embla-carousel-autoplay"
 import ProjectCard from '../ProjectCard/ProjectCard'
+import { useLocale } from 'next-intl'
+
 export default function ProjectsCarousel() {
+  const locale = useLocale();
+  const isArabic = locale === "ar";
+  
   const projects = [
     {
       id: 1,

@@ -4,18 +4,19 @@ import * as React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import Image from "next/image";
-// import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function PartnersCarousel() {
-  // const locale = useLocale();
-  // const isArabic = locale === "ar";
-  // const t = useTranslations('services');
+  const locale = useLocale();
+  const isArabic = locale === "ar";
+  const t = useTranslations('services');
   const [emblaRef] = useEmblaCarousel(
     {
       loop: true,
       dragFree: true,
+      direction: isArabic ? 'rtl' : 'ltr',
     },
-    [AutoScroll({ speed: 1.5, stopOnInteraction: false })] // smooth continuous scroll
+    [AutoScroll({ speed: 1.5, stopOnInteraction: false, direction: isArabic ? 'backward' : 'forward' })]
   );
 
   const partners = [

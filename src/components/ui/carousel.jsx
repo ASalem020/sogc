@@ -27,9 +27,13 @@ function Carousel({
   children,
   ...props
 }) {
+  // Detect RTL direction
+  const isRTL = typeof document !== 'undefined' && document.dir === 'rtl';
+  
   const [carouselRef, api] = useEmblaCarousel({
     ...opts,
     axis: orientation === "horizontal" ? "x" : "y",
+    direction: isRTL ? 'rtl' : 'ltr',
   }, plugins)
   const [canScrollPrev, setCanScrollPrev] = React.useState(false)
   const [canScrollNext, setCanScrollNext] = React.useState(false)

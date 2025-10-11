@@ -4,6 +4,8 @@ import { useRouter, usePathname } from "next/navigation";
 import SocialMedia from "../../_Components/social-media/social-media";
 import { useTranslations, useLocale } from 'next-intl';
 
+export const dynamic = 'force-dynamic';
+
 export default function Contact() {
   const t = useTranslations('contact');
   const locale = useLocale();
@@ -214,7 +216,7 @@ export default function Contact() {
               </p>
               <div className="space-y-4">
                 <div className={`flex items-center ${isRTL ? 'justify-end' : 'justify-start'} gap-3 bg-white/10 border border-black/30 rounded-xl p-3 hover:bg-white/20 active:bg-white/20 transition`}>
-                  <h4 className="text-sm md:text-2xl text-black">info@sogc.com</h4>
+                  <h4 className="text-sm md:text-2xl text-black">info@sogc-construction.com</h4>
                   <i className="fa-solid fa-envelope text-black"></i>
                 </div>
                 <div className={`flex items-center ${isRTL ? 'justify-end' : 'justify-start'} gap-3 bg-white/10 border border-black/30 rounded-xl p-3 hover:bg-white/20 active:bg-white/20 transition`}>

@@ -6,9 +6,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 
-export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "ar" }];
-}
+export const dynamic = 'force-dynamic';
+export const dynamicParams = true;
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -89,30 +88,31 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-      <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "SOGC Construction & Consultants",
-      url: "https://www.sogc-construction.com",
-      logo: "https://www.sogc-construction.com/favicon.ico",
-      sameAs: [
-        "https://www.facebook.com/sogcconstruction",
-        "https://www.linkedin.com/company/sogc-construction",
-      ],
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: "+20XXXXXXXXXX",
-        contactType: "Customer Service",
-        areaServed: "EG",
-        availableLanguage: ["English", "Arabic"],
-      },
-    }),
-  }}
-/>
-
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "SOGC Construction & Consultants",
+              url: "https://www.sogc-construction.com",
+              logo: "https://www.sogc-construction.com/favicon.ico",
+              sameAs: [
+                "https://www.facebook.com/sogcconstruction",
+                "https://www.linkedin.com/company/sogc-construction",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+20XXXXXXXXXX",
+                contactType: "Customer Service",
+                areaServed: "EG",
+                availableLanguage: ["English", "Arabic"],
+              },
+            }),
+          }}
+        />
+      </head>
       <body
         className="flex overflow-x-hidden flex-col min-h-screen justify-between"
         suppressHydrationWarning

@@ -3,6 +3,8 @@ import React from 'react'
 import FAQDrawer from '../../_Components/FAQDrawer/FAQDrawer'
 import { useTranslations } from 'next-intl';
 
+export const dynamic = 'force-dynamic';
+
 export default function FAQ() {
   const t = useTranslations('faq');
   
