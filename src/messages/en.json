@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "title": "SOGC Construction & Consultants | Building Egypt's Future | Professional Construction Company in Egypt",
+    "description": "SOGC Construction & Consultants is a leading Egyptian company specializing in construction, engineering, and project consulting. We deliver high-quality, innovative, and sustainable solutions for clients across Egypt."
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "startNewProject": "Start New Project"
+  },
+  "hero": {
+    "title": "Building Egypt's Future",
+    "subtitle": "Professional Construction & Consulting Services",
+    "cta": "Get Started"
+  },
+  "services": {
+    "partners": "Our Trusted Partners",
+    "title": "Our",
+    "titleHighlight": "Services",
+    "subtitle": "With over thirty years of experience in residential renovation design and over 16,000 renovation plans delivered to this day. Homeowners can have confidence in their choice of a metal roofing Contractor knowing they have met certain requirements.",
+    "requestButton": "Request Custom Service",
+    "requestButtonFlip": "Contact Us Now!",
+    "designBuilding": {
+      "title": "Design &",
+      "subtitle": "Building",
+      "description": "Services currently available at the Department's Development HUB have been enhanced."
+    },
+    "tilingPainting": {
+      "title": "Tiling",
+      "subtitle": "Painting",
+      "description": "Will allow the applicant to access reviewer comments and objections online."
+    },
+    "condoRemodeling": {
+      "title": "Condo",
+      "subtitle": "Remodeling",
+      "description": "Applicants and Owners can review plans and objections alongside their plan examiner virtually."
+    },
+    "safeConstruction": {
+      "title": "Safe",
+      "subtitle": "Construction",
+      "description": "Applicants and Owners can review plans and objections alongside their plan examiner virtually."
+    },
+    "interiorDesign": {
+      "title": "Interior",
+      "subtitle": "Design",
+      "description": "Applicants and Owners can review plans and objections alongside their plan examiner virtually."
+    }
+  },
+  "about": {
+    "header": "About Us",
+    "title": "About Us",
+    "titleHighlight": "",
+    "subtitle": "SOGC is a general contracting company established in 2018, headquartered in Suez with a branch in 10th of Ramadan City.",
+    "subtitle2": "We specialize in executing and managing integrated projects across multiple sectors, including:",
+    "service1": {
+      "title": "Construction and Building Works",
+      "description": "We execute high-quality residential, commercial, and industrial projects with precision, adhering to the highest engineering and safety standards to ensure long-lasting structures."
+    },
+    "service2": {
+      "title": "Infrastructure Works (Roads – Wastewater Treatment Plants)",
+      "description": "Our infrastructure division delivers essential public works, including durable road networks and advanced wastewater treatment facilities that support sustainable urban development."
+    },
+    "service3": {
+      "title": "Interior and Exterior Finishing",
+      "description": "We provide elegant and durable finishing solutions, ensuring every detail—inside and out—reflects superior craftsmanship and aesthetic excellence."
+    },
+      "service4": {
+        "title": "Excavation and Site Preparation",
+        "description": "Our team handles all types of earthworks and grading, preparing construction sites with accuracy and efficiency for optimal project execution."
+      },
+      "service5": {
+        "title": "Quarry Operations and Supply of Building Materials (Gravel, Soil, Sand, Stones, etc.)",
+        "description": "We manage quarry operations and supply top-grade construction materials that meet national standards and support large-scale building and infrastructure projects."
+      },
+      "service6": {
+        "title": "Transportation and Supporting Contracting Services",
+        "description": "SOGC offers reliable logistics, heavy equipment transport, and on-site support services to keep projects running smoothly and on schedule."
+      },
+      "footer": {
+        "description": "Within a few years, the company has achieved remarkable success with projects exceeding EGP 100 million, providing comprehensive construction solutions for major governmental and private sector clients."
+      },
+      "timeline": {
+        "title": "Timeline of the company's history"
+      },
+      "timeline1": {
+        "time": "2018",
+        "description": "Founded SOGC Construction, laying the foundation for a vision to become one of Egypt’s leading companies in general contracting and real estate development."
+      },
+      "timeline2": {
+        "time": "2019",
+        "description": "Expanded operations into finishing and fit-out works, completing multiple residential and administrative projects."
+      },
+      "timeline3": {
+        "time": "2021",
+        "description": "Secured major governmental partnerships and began largescale infrastructure and excavation projects."
+      },
+      
+      
+      "timeline4": {
+        "time": "2022",
+        "description": "Delivered the first mega-project exceeding 50 million EGP, marking a significant milestone in company growth."
+      },
+      "timeline5": {
+        "time": "2023",
+        "description": "Expanded the heavy-equipment fleet and executed the New Delta and national-infrastructure projects."
+      },
+      "timeline6": {
+        "time": "2024",
+        "description": "Ventured into real-estate marketing and strategic development to strengthen market presence."
+      }
+      
+
+  },
+  "projects": {
+    
+    "header": "Projects",
+    "title": "Latest Projects",
+    "subtitle": "Check out our latest construction projects around the world"
+  },
+  "contact": {
+    "header": "Contact Us",
+    "title": "Contact Center",
+    "subtitle": "Please fill out the form below and we'll get back to you as soon as possible.",
+    "infoTitle": "Contact Us",
+    "infoSubtitle": "We're here to answer all your questions — whether it's a general inquiry, suggestion, or technical support.",
+    "form": {
+      "name": "Full Name",
+      "nameError": "Name must be at least 5 characters",
+      "email": "Email",
+      "emailError": "Invalid email address",
+      "subject": "Subject",
+      "subjectError": "Subject is too short",
+      "message": "Message",
+      "messageError": "Message must be at least 10 characters",
+      "submit": "Send",
+      "submitting": "Sending...",
+      "success": "Your message was sent successfully",
+      "successRedirect": "You will be redirected to the home page shortly..."
+    },
+    "subjects": {
+      "inquiry": "Inquiry",
+      "complaint": "Complaint",
+      "suggestion": "Suggestion",
+      "support": "Technical Support"
+    }
+  },
+  "faq": {
+    "header": "FAQ",
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to common questions"
+  },
+  "footer": {
+    "copyright": "© 2025 SOGC Construction & Consultants. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
+

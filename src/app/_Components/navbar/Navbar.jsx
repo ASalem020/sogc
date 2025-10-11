@@ -1,17 +1,24 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { FaShoppingCart } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-// import { FaBars } from 'react-icons/fa6'
+import { useTranslations, useLocale } from 'next-intl';
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 
 export default function Navbar() {
+  const t = useTranslations('navbar');
+  const locale = useLocale();
   const path = usePathname();
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
+    
+
+    
+    
+    
     const handleScroll = () => {
       // check if mobile screen
       let scrollPoint = 0;
@@ -21,11 +28,9 @@ export default function Navbar() {
         scrollPoint = window.innerHeight * 0.317;
       }
 
-      // تحديد إذا كان لازم يبقى Sticky
-
       setIsSticky(window.scrollY > scrollPoint);
 
-      // إظهار/إخفاء حسب الاتجاه
+      // Show/hide based on scroll direction
       if (isSticky && window.scrollY > lastScrollY) {
         setShow(false); // Scrolling down → hide
       } else {
@@ -38,6 +43,9 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
+
+  // Helper to create localized links
+  const getLocalizedPath = (path) => `/${locale}${path}`;
 
   return (
     <header>
@@ -58,26 +66,24 @@ export default function Navbar() {
             <img
               src="/png 2.png"
               alt="logo"
-              
-              
               className={` h-8 w-8 !mx-4 ${
                 isSticky ? "relative block scale-130  " : "absolute scale-0"
               } transition-all  duration-300`}
             />
 
             <Link
-              href="/"
+              href={getLocalizedPath("/")}
               className={`relative inline-block text-lg font-semibold transition-all duration-300
-    ${path === "/" ? "text-black bg-white p-2 rounded-4xl" : `text-white after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px]
+    ${path === getLocalizedPath("/") || path === `/${locale}` ? "text-black bg-white p-2 rounded-4xl" : `text-white after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px]
     after:bg-current after:transition-all after:duration-300 hover:after:w-full hover:-translate-y-1 duration-500 transition-all  `}
     
   `}
             >
-              Home
+              {t('home')}
             </Link>
 
             <Link
-              href="/about"
+              href={getLocalizedPath("/about")}
               className={`relative inline-block text-lg font-semibold transition-all duration-300
     ${
       path.includes("/about")
@@ -88,11 +94,11 @@ export default function Navbar() {
     
   `}
             >
-              About
+              {t('about')}
             </Link>
 
             <Link
-              href="/services"
+              href={getLocalizedPath("/services")}
               className={`relative inline-block text-lg font-semibold transition-all duration-300
     ${
       path.includes("/services")
@@ -103,11 +109,26 @@ export default function Navbar() {
 
   `}
             >
-              Services
+              {t('services')}
             </Link>
 
             <Link
-              href="/contact"
+              href={getLocalizedPath("/projects")}
+              className={`relative inline-block text-lg font-semibold transition-all duration-300
+    ${
+      path.includes("/projects")
+        ? "text-black bg-white p-2 rounded-4xl"
+        : `text-white after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px]
+    after:bg-current after:transition-all after:duration-300 hover:after:w-full hover:-translate-y-1 duration-500 transition-all  `
+    }
+
+  `}
+            >
+              {t('projects')}
+            </Link>
+
+            <Link
+              href={getLocalizedPath("/contact")}
               className={`relative inline-block text-lg font-semibold transition-all duration-300
     ${
       path.includes("/contact")
@@ -118,10 +139,10 @@ export default function Navbar() {
     
   `}
             >
-              Contact
+              {t('contact')}
             </Link>
             <Link
-              href="/faq"
+              href={getLocalizedPath("/faq")}
               className={`relative inline-block text-lg font-semibold transition-all duration-300
     ${
       path.includes("/faq")
@@ -132,15 +153,15 @@ export default function Navbar() {
     
   `}
             >
-              FAQ
+              {t('faq')}
             </Link>
           </div>
           <div>
-            {/* cart icon */}
+            {/* Language Switcher and CTA */}
             <div className="flex items-center  gap-5">
-              {/* <FaShoppingCart className="w-8 h-8 hover:-translate-y-1 hover:border-b-2   active:scale-95 transition-all duration-300 cursor-pointer " /> */}
-              <button className="rounded-4xl text-[1.4rem] p-2 hover:!-translate-y-0.5  bg-white text-black   active:scale-95 transition-all duration-300 cursor-pointer ">
-                Start New Project
+              <LanguageSwitcher />
+              <button className="rounded-4xl text-[1.4rem] p-2 hover:!-translate-y-0.5  bg-white !text-black   active:scale-95 transition-all duration-300 cursor-pointer ">
+                  {t('startNewProject')}
               </button>
             </div>
           </div>
@@ -158,78 +179,78 @@ export default function Navbar() {
           <div
             className={`flex justify-between items-center gap-2 ${
               isSticky
-                ? "  text-[1rem] flex items-center gap-2 py-2  "
+                ? "  text-[0.5rem] flex items-center gap-2 py-2  "
                 : "text-[1.2rem] py-1 flex items-center gap-2   "
             } transition-all duration-300 `}
           >
             <img
               src="/png 2.png"
               alt="logo"
-           
               className={`h-8 w-8 !mx-1 ${
                 isSticky ? "relative block scale-130  " : "absolute scale-0"
               } transition-all  duration-300`}
             />
+            
           <Link
-  href="/"
-  className={`relative inline-block text-lg font-semibold transition-all duration-300 
-    ${path === '/' ? 'text-black bg-white p-2 rounded-4xl' : `text-white' after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px]
+  href={getLocalizedPath("/")}
+  className={`relative inline-block text-[0.43rem] font-semibold transition-all duration-300 
+    ${path === getLocalizedPath("/") || path === `/${locale}` ? 'text-black bg-white p-2 rounded-4xl' : `text-white ' after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px]
     after:bg-current after:transition-all after:duration-300 hover:after:w-full hover:-translate-y-1 duration-500 transition-all  `}
     hover:-translate-y-1 
     
   `}
 >
-  Home
+  {t('home')}
 </Link>
 
 <Link
-  href="/about"
-  className={`relative inline-block text-lg font-semibold transition-all duration-300 
+  href={getLocalizedPath("/about")}
+  className={`relative inline-block text-[0.43rem] font-semibold transition-all duration-300 
     ${path.includes('/about') ? 'text-black bg-white p-2 rounded-4xl' : 'text-white'}
     hover:-translate-y-1 
     after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px]
     after:bg-current after:transition-all after:duration-300 hover:after:w-full
   `}
 >
-  About
+  {t('about')}
 </Link>
 
 <Link
-  href="/services"
-  className={`relative inline-block text-lg font-semibold transition-all duration-300 
+  href={getLocalizedPath("/services")}
+  className={`relative inline-block text-[0.43rem] font-semibold transition-all duration-300 
     ${path.includes('/services') ? 'text-black bg-white p-2 rounded-4xl' : 'text-white'}
     hover:-translate-y-1 
     after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px]
     after:bg-current after:transition-all after:duration-300 hover:after:w-full
   `}
 >
-  Services
+  {t('services')}
 </Link>
 
 <Link
-  href="/contact"
-  className={`relative inline-block text-lg font-semibold transition-all duration-300 
+  href={getLocalizedPath("/contact")}
+  className={`relative inline-block text-[0.43rem] font-semibold transition-all duration-300 
     ${path.includes('/contact') ? 'text-black bg-white p-2 rounded-4xl' : 'text-white'}
     hover:-translate-y-1 
     after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px]
     after:bg-current after:transition-all after:duration-300 hover:after:w-full
   `}
 >
-  Contact
+  {t('contact')}
 </Link>
 <Link
-  href="/faq"
-  className={`relative inline-block text-lg font-semibold transition-all duration-300 
+  href={getLocalizedPath("/faq")}
+  className={`relative inline-block text-[0.43rem] font-semibold transition-all duration-300 
     ${path.includes('/faq') ? 'text-black bg-white p-2 rounded-4xl' : 'text-white'}
     hover:-translate-y-1 
     after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px]
     after:bg-current after:transition-all after:duration-300 hover:after:w-full
   `}
 >
-  FAQ
+  {t('faq')}
 </Link>
+<LanguageSwitcher />
           </div>
-          {/* <FaBars className="w-8 h-8 text-white hover:-translate-y-1 hover:border-b-2  transition-all duration-300 cursor-pointer " /> */}
         </div>
       </nav>
     </header>

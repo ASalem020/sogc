@@ -1,9 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import SocialMedia from "../_Components/social-media/social-media";
+import { useRouter, usePathname } from "next/navigation";
+import SocialMedia from "../../_Components/social-media/social-media";
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function Contact() {
+  const t = useTranslations('contact');
+  const locale = useLocale();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,13 +22,13 @@ export default function Contact() {
     let error = "";
     if (value.trim() !== "") {
       if (name === "name" && value.trim().length < 5)
-        error = "يجب أن يكون الاسم 5 أحرف على الأقل";
+        error = t('form.nameError');
       if (name === "email" && !/\S+@\S+\.\S+/.test(value))
-        error = "البريد الإلكتروني غير صالح";
+        error = t('form.emailError');
       if (name === "subject" && value.trim().length < 3)
-        error = "الموضوع قصير جداً";
+        error = t('form.subjectError');
       if (name === "message" && value.trim().length < 10)
-        error = "يجب أن تحتوي الرسالة على 10 أحرف على الأقل";
+        error = t('form.messageError');
     }
     setErrors((p) => ({ ...p, [name]: error }));
   };
@@ -52,22 +55,29 @@ export default function Contact() {
 
   useEffect(() => {
     if (showSuccess) {
-      const t = setTimeout(() => router.push("/"), 3000);
+      const t = setTimeout(() => router.push(`/${locale}`), 3000);
       return () => clearTimeout(t);
     }
-  }, [showSuccess]);
+  }, [showSuccess, router, locale]);
 
-  const subjectSuggestions = ["استفسار", "شكوى", "مقترح", "دعم فني"];
+  const subjectSuggestions = [
+    t('subjects.inquiry'),
+    t('subjects.complaint'),
+    t('subjects.suggestion'),
+    t('subjects.support')
+  ];
+
+  const isRTL = locale === 'ar';
 
   return (
-    <section className="   px-3 text-end md:px-10 lg:px-20  py-16 font-[Cairo]">
+    <section className={`px-3 ${isRTL ? 'text-end' : 'text-start'} md:px-10 lg:px-20  py-16 font-[Cairo]`}>
       <div className="container mx-auto">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-black mb-3">
-          مركز التواصل
+          {t('title')}
         </h1>
         <p className="text-lg text-gray-500">
-          يرجى ملء النموذج أدناه وسنعود إليك في أقرب وقت ممكن.
+          {t('subtitle')}
         </p>
       </header>
 
@@ -78,10 +88,10 @@ export default function Contact() {
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/90 backdrop-blur-sm z-10 text-center text-black animate-fadeIn rounded-2xl">
               <div className="text-5xl mb-3">✅</div>
               <h3 className="text-xl font-semibold mb-2">
-                تم إرسال رسالتك بنجاح
+                {t('form.success')}
               </h3>
-              <p className="text-sm text-gray-200">
-                سيتم تحويلك للصفحة الرئيسية خلال لحظات...
+              <p className="text-sm text-gray-500">
+                {t('form.successRedirect')}
               </p>
             </div>
           )}
@@ -91,14 +101,14 @@ export default function Contact() {
               {/* name */}
               <div>
                 <label className="block text-black font-semibold mb-1">
-                  الاسم الكامل
+                  {t('form.name')}
                 </label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full p-3 rounded-lg bg-white border border-black/40 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black transition"
+                  className="w-full p-3 rounded-lg bg-white border border-black/40 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black transition"
                 />
                 {errors.name && (
                   <p className="text-red-500 text-sm mt-1">{errors.name}</p>
@@ -108,14 +118,14 @@ export default function Contact() {
               {/* email */}
               <div>
                 <label className="block text-black font-semibold mb-1">
-                  البريد الإلكتروني
+                  {t('form.email')}
                 </label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-3 rounded-lg bg-white border border-black/40 text-gray-100 focus:outline-none focus:ring-2 focus:ring-black transition"
+                  className="w-full p-3 rounded-lg bg-white border border-black/40 text-gray-900 focus:outline-none focus:ring-2 focus:ring-black transition"
                 />
                 {errors.email && (
                   <p className="text-red-500 text-sm mt-1">{errors.email}</p>
@@ -126,14 +136,14 @@ export default function Contact() {
             {/* subject */}
             <div>
               <label className="block text-black font-semibold mb-1">
-                الموضوع
+                {t('form.subject')}
               </label>
               <input
                 type="text"
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full p-3 rounded-lg bg-white border border-black/40 text-gray-100 focus:outline-none focus:ring-2 focus:ring-black transition"
+                className="w-full p-3 rounded-lg bg-white border border-black/40 text-gray-900 focus:outline-none focus:ring-2 focus:ring-black transition"
               />
               {errors.subject && (
                 <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
@@ -149,7 +159,7 @@ export default function Contact() {
                     className={`px-3 py-1 rounded-full text-sm font-semibold border transition ${
                       formData.subject === s
                         ? "bg-white text-black border-black"
-                        : "border-black/40 text-black hover:bg-white/20 active:bg-white/20"
+                        : "border-black/40 text-black hover:bg-black/10 active:bg-black/10"
                     }`}
                   >
                     {s}
@@ -161,14 +171,14 @@ export default function Contact() {
             {/* message */}
             <div>
               <label className="block text-black font-semibold mb-1">
-                الرسالة
+                {t('form.message')}
               </label>
               <textarea
                 name="message"
                 rows="5"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full p-3 rounded-lg bg-white border border-black/40 text-gray-100 focus:outline-none focus:ring-2 focus:ring-black transition"
+                className="w-full p-3 rounded-lg bg-white border border-black/40 text-gray-900 focus:outline-none focus:ring-2 focus:ring-black transition"
               ></textarea>
               {errors.message && (
                 <p className="text-red-500 text-sm mt-1">{errors.message}</p>
@@ -178,13 +188,13 @@ export default function Contact() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full py-3 mt-4 bg-white text-black font-semibold rounded-lg shadow-md hover:bg-white active:bg-white transition flex items-center justify-center gap-2"
+              className="w-full py-3 mt-4 bg-black text-white font-semibold rounded-lg shadow-md hover:bg-black/90 active:bg-black/80 transition flex items-center justify-center gap-2"
             >
               {submitting ? (
-                <span className="animate-spin border-2 border-black border-t-transparent rounded-full w-5 h-5"></span>
+                <span className="animate-spin border-2 border-white border-t-transparent rounded-full w-5 h-5"></span>
               ) : (
                 <>
-                  إرسال <i className="fa-solid fa-paper-plane"></i>
+                  {t('form.submit')} <i className="fa-solid fa-paper-plane"></i>
                 </>
               )}
             </button>
@@ -196,19 +206,18 @@ export default function Contact() {
           <div className="absolute inset-0 bg-white/70"></div>
           <div className="relative z-10 h-full flex flex-col justify-between p-8 text-gray-100">
             <div>
-              <h2 className="text-3xl font-bold text-black mb-4 text-right">
-                تواصل معنا
+              <h2 className={`text-3xl font-bold text-black mb-4 ${isRTL ? 'text-right' : 'text-left'}`}>
+                {t('infoTitle')}
               </h2>
-              <p className="text-right text-gray-300 mb-8 leading-relaxed">
-                نحن هنا للإجابة على جميع استفساراتك — سواء كانت استفسارًا
-                عامًا، مقترحًا، أو دعمًا فنيًا.
+              <p className={`${isRTL ? 'text-right' : 'text-left'} text-gray-600 mb-8 leading-relaxed`}>
+                {t('infoSubtitle')}
               </p>
               <div className="space-y-4">
-                <div className="flex items-center justify-end gap-3 bg-white/10 border border-black/30 rounded-xl p-3 hover:bg-white/20 active:bg-white/20 transition">
+                <div className={`flex items-center ${isRTL ? 'justify-end' : 'justify-start'} gap-3 bg-white/10 border border-black/30 rounded-xl p-3 hover:bg-white/20 active:bg-white/20 transition`}>
                   <h4 className="text-sm md:text-2xl text-black">info@sogc.com</h4>
                   <i className="fa-solid fa-envelope text-black"></i>
                 </div>
-                <div className="flex items-center justify-end gap-3 bg-white/10 border border-black/30 rounded-xl p-3 hover:bg-white/20 active:bg-white/20 transition">
+                <div className={`flex items-center ${isRTL ? 'justify-end' : 'justify-start'} gap-3 bg-white/10 border border-black/30 rounded-xl p-3 hover:bg-white/20 active:bg-white/20 transition`}>
                   <h4 className="text-sm text-black">+20 1092332047</h4>
                   <i className="fa-solid fa-phone text-black"></i>
                 </div>
