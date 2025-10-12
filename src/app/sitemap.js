@@ -3,7 +3,7 @@ import { MetadataRoute } from "next";
 export default function sitemap() {
   const baseUrl = "https://www.sogc-construction.com";
 
-  const routes = ["", "/about", "/services", "/contact"];
+  const routes = ["", "/about", "/services", "/projects", "/contact", "/faq"];
 
   const locales = ["en", "ar"];
 

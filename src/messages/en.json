@@ -25,31 +25,38 @@
     "subtitle": "With over thirty years of experience in residential renovation design and over 16,000 renovation plans delivered to this day. Homeowners can have confidence in their choice of a metal roofing Contractor knowing they have met certain requirements.",
     "requestButton": "Request Custom Service",
     "requestButtonFlip": "Contact Us Now!",
-    "designBuilding": {
-      "title": "Design &",
-      "subtitle": "Building",
-      "description": "Services currently available at the Department's Development HUB have been enhanced."
+
+    "1": {
+      "title": "GENERAL ",
+      "subtitle": "CONTRACTING",
+      "description": "Comprehensive management and execution of all types of projects, from design to delivery, following the highest standards of quality and safety."
     },
-    "tilingPainting": {
-      "title": "Tiling",
-      "subtitle": "Painting",
-      "description": "Will allow the applicant to access reviewer comments and objections online."
+
+    "2": {
+      "title": "FULL",
+      "subtitle": "FINISHING",
+      "description": "Complete finishing works for apartments, villas, and commercial units, including painting, flooring, gypsum, electrical, and plumbing works"
     },
-    "condoRemodeling": {
-      "title": "Condo",
-      "subtitle": "Remodeling",
-      "description": "Applicants and Owners can review plans and objections alongside their plan examiner virtually."
+    "3": {
+      "title": "EXCAVATION",
+      "subtitle": "EARTHWORKS",
+      "description": "Professional excavation, backfilling, and land leveling services using advanced equipment to ensure precision and efficiency on site."
     },
-    "safeConstruction": {
-      "title": "Safe",
-      "subtitle": "Construction",
-      "description": "Applicants and Owners can review plans and objections alongside their plan examiner virtually."
+    "4": {
+      "title": "HEAVY",
+      "subtitle": "EQUIPMENT",
+      "description": "Operation, rental, and supply of heavy machinery and construction equipment to support excavation, earthworks, and large scale infrastructure projects"
     },
-    "interiorDesign": {
-      "title": "Interior",
-      "subtitle": "Design",
-      "description": "Applicants and Owners can review plans and objections alongside their plan examiner virtually."
-    }
+      "5": {
+        "title": "TRANSPORTATION",
+        "subtitle": "SERVICES",
+        "description": "Providing comprehensive transportation and logistics solutions for materials, equipment, and project supplies to ensure smooth site operations."
+      },
+      "6": {
+        "title": "FUTURE",
+        "subtitle": "SERVICES",
+        "description": "Expanding into real estate marketing and investment projects, including malls, compounds, and residential developments, offering integrated property solutions."
+      }
   },
   "about": {
     "header": "About Us",

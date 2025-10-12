@@ -1,90 +1,183 @@
+"use client";
 import React from "react";
 import SocialMedia from "../social-media/social-media";
-import { FaHandshake, FaPhone, FaMapMarker } from "react-icons/fa";
-import { FaLocationCrosshairs } from "react-icons/fa6";
+import { FaHandshake, FaPhone, FaMapMarker, FaClock } from "react-icons/fa";
+import { FaCalendarCheck, FaLocationCrosshairs } from "react-icons/fa6";
 import { GrMapLocation } from "react-icons/gr";
 import { FaPhoneVolume } from "react-icons/fa6";
 import Image from "next/image";
-
-
-
+import { useTranslations } from "next-intl";
 
 export default function HeaderSocial() {
+  const t = useTranslations('footer');
+  
   return (
-    <header className="hidden  md:flex flex-col  ">
-        {/* upper part of the header */}
-      <div className="bg-black/90 py-0 md:py-4  ">
-        <div className="container mx-auto flex justify-between items-center">
-          <p className="font-bold text-white text-sm lg:text-lg flex items-center gap-2">
-            {" "}
-            <FaHandshake className=" text-white w-7 h-7" /> Hello, Welcome
-            to sogc Construction website
-          </p>
-          {/* social media links */}
-          <div className="md:space-x-4  justify-center align-baseline md:gap-3 flex ">
+    <header className="bg-white shadow-lg hidden lg:block ">
+      {/* Top Bar - Social Media & Free Consultation */}
+      <div className="bg-gray-800 py-3 px-4">
+        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
+          {/* Social Media Links */}
+          <div className="flex items-center gap-4">
             <SocialMedia />
-            <div className=" text-white px-4 py-2   md:block    border-l-2 ">
-              <a className=" text-white px-4 py-2 rounded-md cursor-pointer hover:bg-white  hover:text-black transition-all duration-300  md:text-sm lg:text-lg   ">
-                Free Consultation
-              </a>
-            </div>
+            <div className="h-4 w-px bg-gray-600"></div>
           </div>
+          {/* Logo */}
+          <div className="flex  lg:hidden justify-center mb-6">
+              <Image
+                src="/png 1.png"
+                alt="SOGC Logo"
+                width={200}
+                height={80}
+                className="h-16 w-auto hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          {/* Free Consultation */}
+          <a 
+            href="/contact"
+            className="text-white text-sm font-medium hover:text-orange-400 transition-colors duration-300"
+          >
+            Free Consultation
+          </a>
         </div>
       </div>
-        {/* lower part of the header */}
-      <div className="container mx-auto grid grid-cols-3 xl:grid-cols-5 px-5  pt-5   justify-between ">
-        {/* Logo */}
-        <div className="col-span-1 xl:col-span-2 flex justify-start items-center   ">
-         <Image
-            src="/png 1.png"
-            alt="logo"
-            width={500}
-            height={500}
-            className=" w-15 h-15 ms-4 lg:w-20 lg:h-20 my-5 hover:-translate-y-1.5 duration-500 transition-all  "
-          />
-        </div>
-        {/* contact details */}
-        <div className="flex items-center justify-end gap-2 col-span-2 xl:col-span-3 ">
-          {/* phone number */}
-          <div className="flex items-center justify-end gap-1 lg:gap-2 group w-full hover:-translate-y-1 duration-500 transition-all   ">
-            <div className=" border-black border-2 rounded-full p-4 group-hover:bg-black transition-all duration-300">
-              <FaPhoneVolume className=" text-black  md:w-6 md:h-6 lg:w-10 lg:h-10   group-hover:text-white transition-all duration-300  " />
-            </div>
-            <div>
-            <p className="relative inline-block font-bold text-black text-[0.788rem] lg:text-[0.930rem]  line-clamp-1  transition-all duration-300 
-                after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] 
-                after:bg-black after:transition-all after:duration-300 group-hover:after:w-full">info@sogc-construction.com</p>
-<br />
-  <p className="relative inline-block font-bold text-black text-[0.8rem] lg:text-[0.930rem]  line-clamp-1  transition-all duration-300 
-                after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] 
-                after:bg-black after:transition-all after:duration-300 group-hover:after:w-full">
-    +123 456 7890
-  </p>
+
+      {/* Main Header */}
+      <div className="bg-white">
+        <div className="container mx-auto px-4 py-6">
+          
+          {/* Mobile Layout */}
+          <div className="md:hidden">
+          
+
+            {/* Contact Info Grid */}
+            <div className="grid grid-cols-1 gap-4 mb-6">
+              
+              {/* Working Hours */}
+              <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:shadow-md transition-shadow duration-300">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                  <FaCalendarCheck className="text-blue-600 text-lg" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">{t('hours.title')}</p>
+                  <p className="text-gray-900 font-bold text-sm">
+                    {t('hours.weekdays')}: {t('hours.weekdaysTime')}
+                  </p>
+                  <p className="text-red-600 font-semibold text-sm">
+                    {t('hours.friday')}: {t('hours.fridayTime')}
+                  </p>
+                </div>
+              </div>
+
+              {/* Phone */}
+              <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:shadow-md transition-shadow duration-300">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <FaPhoneVolume className="text-green-600 text-lg" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">Contact</p>
+                  <a 
+                    href="tel:+201234567890" 
+                    className="text-gray-900 font-bold text-sm hover:text-green-600 transition-colors duration-300 block"
+                  >
+                    info@sogc-construction.com
+                  </a>
+                  <a 
+                    href="tel:+201234567890" 
+                    className="text-gray-900 font-bold text-sm hover:text-green-600 transition-colors duration-300 block"
+                  >
+                    +123 456 7890
+                  </a>
+                </div>
+              </div>
+
+              {/* Address */}
+              <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:shadow-md transition-shadow duration-300">
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                  <GrMapLocation className="text-orange-600 text-lg" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">Location</p>
+                  <p className="text-gray-900 font-bold text-sm">
+                    123 Main St, Anytown, USA
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/*adress  */}
-          <div className="flex items-center justify-end gap-1 lg:gap-2 w-full  group hover:-translate-y-1 duration-500 transition-all   ">
-            <div className="flex items-center gap-2 ">
-              <div className="border-black border-2 rounded-full p-4 group-hover:bg-black transition-all duration-300">
-                <GrMapLocation className=" text-black w-6 h-6 lg:w-10 lg:h-10  group-hover:text-white transition-all duration-300" />
+          {/* Desktop Layout */}
+          <div className="hidden md:block">
+            <div className="flex items-center justify-between">
+              
+              {/* Logo */}
+              <div className="flex-shrink-0 hidden lg:block">
+                <Image
+                  src="/png 1.png"
+                  alt="SOGC Logo"
+                  width={200}
+                  height={80}
+                  className="h-16 w-auto hover:scale-105 transition-transform duration-300"
+                />
               </div>
-              <div>
+
+              {/* Contact Information Grid */}
+              <div className="flex items-center gap-8">
                 
-              <p
-  className="relative inline-block font-bold text-black text-[0.8rem] lg:text-[0.960rem] transition-all duration-300 
-                after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] 
-                after:bg-black after:transition-all after:duration-300 group-hover:after:w-full"
->
-  123 Main St, Anytown, USA
-</p>
+                {/* Working Hours */}
+                <div className="flex items-center gap-3 group hover:-translate-y-1 transition-all duration-300">
+                  <div className="md:w-12 lg:w-14 lg:h-12  md:h-10 border-2 border-black rounded-full flex items-center justify-center group-hover:bg-black transition-all duration-300">
+                    <FaCalendarCheck className="text-black group-hover:text-white text-lg transition-colors duration-300" />
+                  </div>
+                  <div className="w-full">
+                    <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">{t('hours.title')}</p>
+                    <p className="text-gray-900 font-bold text-sm">
+                      {t('hours.weekdays')}: {t('hours.weekdaysTime')}
+                    </p>
+                    <p className="text-red-600 font-semibold text-sm">
+                      {t('hours.friday')}: {t('hours.fridayTime')}
+                    </p>
+                  </div>
+                </div>
 
+                {/* Contact Details */}
+                <div className="flex items-center gap-3 group hover:-translate-y-1 transition-all duration-300">
+                  <div className="md:w-12 lg:w-15 lg:h-12   md:h-10 border-2 border-black rounded-full flex items-center justify-center group-hover:bg-black transition-all duration-300">
+                    <FaPhoneVolume className="text-black group-hover:text-white text-lg transition-colors duration-300" />
+                  </div>
+                  <div className="w-full">
+                    <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">Contact</p>
+                    <a 
+                      href="mailto:info@sogc-construction.com"
+                      className="text-gray-900 font-bold text-sm hover:text-blue-600 transition-colors duration-300 block"
+                    >
+                      info@sogc-construction.com
+                    </a>
+                    <a 
+                      href="tel:+201234567890" 
+                      className="text-gray-900 font-bold text-sm hover:text-green-600 transition-colors duration-300 block"
+                    >
+                      +123 456 7890
+                    </a>
+                  </div>
+                </div>
+
+                {/* Address */}
+                <div className="flex items-center gap-3 group hover:-translate-y-1 transition-all duration-300">
+                  <div className="md:w-12 lg:w-15 lg:h-12  md:h-10 border-2 border-black rounded-full flex items-center justify-center group-hover:bg-black transition-all duration-300">
+                    <GrMapLocation className="text-black group-hover:text-white text-lg transition-colors duration-300" />
+                  </div>
+                  <div className="w-full">
+                    <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">Location</p>
+                    <p className="text-gray-900  font-bold text-sm">
+                      123 Main St, Anytown, USA
+                    </p>
+                  </div>
+                </div>
 
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </header>
   );

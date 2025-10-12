@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import SocialMedia from "../../_Components/social-media/social-media";
 import { useTranslations, useLocale } from 'next-intl';
+import FadeInAnimation from "../../../components/animations/FadeInAnimation";
+import StaggerAnimation from "../../../components/animations/StaggerAnimation";
+
 
 export const dynamic = 'force-dynamic';
 
@@ -74,18 +77,26 @@ export default function Contact() {
   return (
     <section className={`px-3 ${isRTL ? 'text-end' : 'text-start'} md:px-10 lg:px-20  py-16 font-[Cairo]`}>
       <div className="container mx-auto">
-      <header className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-black mb-3">
-          {t('title')}
-        </h1>
-        <p className="text-lg text-gray-500">
-          {t('subtitle')}
-        </p>
-      </header>
+      <FadeInAnimation direction="up" delay={0.2} duration={0.8}>
+        <header className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-black mb-3">
+            {t('title')}
+          </h1>
+          <p className="text-lg text-gray-500">
+            {t('subtitle')}
+          </p>
+        </header>
+      </FadeInAnimation>
 
-      <div className="flex flex-col md:flex-row gap-10">
+      <StaggerAnimation 
+        staggerDelay={0.2} 
+        direction="up" 
+        delay={0.4}
+        duration={0.8}
+        className=" grid grid-cols-1 md:grid-cols-2 gap-10 lg:px-10"
+      >
         {/* --- FORM --- */}
-        <div className="w-full md:w-1/2 bg-white border border-black/40 p-8 rounded-2xl shadow-[0_0_30px_rgba(0,0,0,0.1)] relative overflow-hidden transition hover:translate-y-[-4px] hover:shadow-[0_0_40px_rgba(0,0,0,0.25)] active:translate-y-[-4px] active:shadow-[0_0_40px_rgba(0,0,0,0.25)]">
+        <div className="w-full  bg-white border border-black/40 p-8 rounded-2xl shadow-[0_0_30px_rgba(0,0,0,0.1)] relative overflow-hidden transition hover:translate-y-[-4px] hover:shadow-[0_0_40px_rgba(0,0,0,0.25)] active:translate-y-[-4px] active:shadow-[0_0_40px_rgba(0,0,0,0.25)]">
           {showSuccess && (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/90 backdrop-blur-sm z-10 text-center text-black animate-fadeIn rounded-2xl">
               <div className="text-5xl mb-3">✅</div>
@@ -204,7 +215,7 @@ export default function Contact() {
         </div>
 
         {/* --- INFO --- */}
-        <div className="w-full md:w-1/2 relative bg-[url('/jpg1.jpg')] bg-cover bg-center rounded-2xl overflow-hidden border border-black/40 shadow-[0_0_30px_rgba(0,0,0,0.15)] transition hover:translate-y-[-4px] hover:shadow-[0_0_40px_rgba(0,0,0,0.25)] active:translate-y-[-4px] active:shadow-[0_0_40px_rgba(0,0,0,0.25)]">
+        <div className="w-full h-full relative bg-[url('/jpg1.jpg')] bg-cover bg-center rounded-2xl overflow-hidden border border-black/40 shadow-[0_0_30px_rgba(0,0,0,0.15)] transition hover:translate-y-[-4px] hover:shadow-[0_0_40px_rgba(0,0,0,0.25)] active:translate-y-[-4px] active:shadow-[0_0_40px_rgba(0,0,0,0.25)]">
           <div className="absolute inset-0 bg-white/70"></div>
           <div className="relative z-10 h-full flex flex-col justify-between p-8 text-gray-100">
             <div>
@@ -231,7 +242,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </div>
+      </StaggerAnimation>
 
       </div>
     </section>

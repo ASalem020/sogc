@@ -10,6 +10,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Timeline from "../../_Components/Timeline/Timeline";
+import FadeInAnimation from "../../../components/animations/FadeInAnimation";
+import StaggerAnimation from "../../../components/animations/StaggerAnimation";
+
 
 export default function About() {
   const t = useTranslations("about");
@@ -21,6 +24,7 @@ export default function About() {
       id: 1,
       title: t("service1.title"),
       description: t("service1.description"),
+      
     },
     {
       id: 2,
