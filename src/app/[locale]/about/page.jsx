@@ -55,8 +55,9 @@ export default function About() {
 
   return (
     <main>
-        <div className="bg-gray-100 overflow-hidden">
-          <div className="py-10 md:mx-10 grid grid-cols-1 md:grid-cols-3 md:min-h-screen min-h-[50vh]">
+        <div className="bg-gray-100 overflow-hidden relative">
+          <div className="bg-[url('/herocar1.jpg')] bg-cover z-0 opacity-20 bg-center absolute top-0 left-0 w-full h-full"></div>
+          <div className="py-10 md:mx-10 grid grid-cols-1 md:grid-cols-3 md:min-h-screen min-h-[50vh] z-10 relative">
             {/* Left Section */}
             <motion.div
               className="md:pt-20 md:px-10 py-10 px-5 md:col-span-2"
@@ -140,7 +141,7 @@ export default function About() {
 
             {/* Right Section - Image */}
             <motion.div
-              className="px-20 py-10 md:py-0 md:p-0 flex justify-center items-center md:col-span-1"
+              className="px-20 md:py-0 md:p-0 flex justify-center items-center md:col-span-1"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -151,7 +152,7 @@ export default function About() {
                 alt="about"
                 width={1000}
                 height={1000}
-                className="w-full h-full md:w-[70%] md:h-[70%]"
+                className="w-[40%] h-[40%]  mt-60 md:w-[50%] md:h-[50%]"
               />
             </motion.div>
 

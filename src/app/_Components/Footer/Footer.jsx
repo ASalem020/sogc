@@ -13,20 +13,20 @@ export default function Footer() {
     <footer className="bg-gradient-to-b from-gray-50 to-gray-200 text-black">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+        <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
           
           {/* Company Info Section */}
-          <div className="lg:col-span-4">
-            <Link href={`/${locale}`} className="inline-block mb-4">
+          <div className="col-span-3 lg:col-span-4">
+            <Link href={`/${locale}`} className="flex justify-center  mb-4">
               <Image 
                 src="/png 1.png" 
                 alt="SOGC Logo" 
                 width={180} 
                 height={60}
-                className="h-20  w-auto"
+                className="h-20   w-auto"
               />
             </Link>
-            <p className="text-sm text-black leading-relaxed mb-4">
+            <p className="text-sm text-black leading-relaxed mb-4 text-center ">
               {t('about.description')}
             </p>
             
@@ -35,11 +35,11 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2">
-            <h3 className="text-black font-bold text-lg mb-4 border-b border-gray-700 pb-2">
+          <div className="col-span-1 md:col-span-2 lg:col-span-2">
+            <h3 className="text-black text-center md:text-start font-bold text-lg mb-4 border-b border-gray-700 pb-2">
               {t('quickLinks.title')}
             </h3>
-            <nav className="space-y-2">
+            <nav className="space-y-2 ">
               <Link href={`/${locale}`} className="block text-black  hover:-translate-y-1 hover:translate-x-1 w-fit hover:bg-black hover:text-white rounded-2xl px-2  transition-all duration-300">
                 {t('quickLinks.home')}
               </Link>
@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div className="lg:col-span-2">
+          <div className="col-span-1 md:col-span-2 lg:col-span-2">
             <h3 className="text-black font-bold text-lg mb-4 border-b border-gray-700 pb-2">
               {t('services.title')}
             </h3>
@@ -92,7 +92,7 @@ export default function Footer() {
           </div>
 
           {/* Contact & Working Hours */}
-          <div className="lg:col-span-4">
+          <div className="col-span-1 md:col-span-2 lg:col-span-4">
             <h3 className="text-black font-bold text-lg mb-4 border-b border-gray-700 pb-2">
               {t('contact.title')}
             </h3>
@@ -111,7 +111,7 @@ export default function Footer() {
                 <svg className="w-5 h-5 text-black flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                 </svg>
-                <a href={`tel:${t('contact.phone')}`} className="text-sm text-black hover:text-black transition-all duration-300 hover:translate-x-1 hover:bg-black hover:text-white rounded-2xl px-2">
+                <a href={`tel:${t('contact.phone')}`} className="text-sm text-black hover:text-black transition-all duration-300 hover:translate-x-1 hover:bg-black  rounded-2xl px-2">
                   {t('contact.phone')}
                 </a>
               </div>
@@ -125,8 +125,8 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Working Hours */}
-            <div className="bg-gray-200 rounded-lg p-4">
+            {/* Working Hours Desktop */}
+            <div className="bg-gray-200 hidden md:block rounded-lg p-4">
               <h4 className="text-black font-semibold text-sm mb-3 flex items-center gap-2">
                 <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -145,8 +145,27 @@ export default function Footer() {
               </div>
             </div>
           </div>
-        </div>
 
+        </div>
+{/* Working Hours Mobile */}
+            <div className="bg-gray-200 md:hidden mt-5 rounded-lg p-4">
+              <h4 className="text-black font-semibold text-sm mb-3 flex items-center gap-2">
+                <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                {t('hours.title')}
+              </h4>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-black">{t('hours.weekdays')}</span>
+                  <span className="text-black font-medium">{t('hours.weekdaysTime')}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-black">{t('hours.friday')}</span>
+                  <span className="text-red-400 font-medium">{t('hours.fridayTime')}</span>
+                </div>
+              </div>
+            </div>
         {/* Google Maps Section */}
         <div className="mt-12">
           <h3 className="text-black font-bold text-lg mb-4 text-center">

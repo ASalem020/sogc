@@ -12,26 +12,26 @@ export default function HeaderSocial() {
   const t = useTranslations('footer');
   
   return (
-    <header className="bg-white shadow-lg hidden lg:block ">
+    <header className="bg-white shadow-lg  lg:block ">
       {/* Top Bar - Social Media & Free Consultation */}
-      <div className="bg-gray-800 py-3 px-4">
+      {/* <div className="bg-gray-800 py-3 px-4">
         <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
-          {/* Social Media Links */}
+          
           <div className="flex items-center gap-4">
             <SocialMedia />
             <div className="h-4 w-px bg-gray-600"></div>
           </div>
-          {/* Logo */}
-          <div className="flex  lg:hidden justify-center mb-6">
+          
+          <div className="flex items-center   md:hidden justify-center ">
               <Image
-                src="/png 1.png"
+                src="/png 2.png"
                 alt="SOGC Logo"
                 width={200}
                 height={80}
-                className="h-16 w-auto hover:scale-105 transition-transform duration-300"
+                className="h-12 w-auto  hover:scale-105 transition-transform duration-300"
               />
             </div>
-          {/* Free Consultation */}
+          
           <a 
             href="/contact"
             className="text-white text-sm font-medium hover:text-orange-400 transition-colors duration-300"
@@ -39,71 +39,13 @@ export default function HeaderSocial() {
             Free Consultation
           </a>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Header */}
       <div className="bg-white">
         <div className="container mx-auto px-4 py-6">
           
-          {/* Mobile Layout */}
-          <div className="md:hidden">
-          
-
-            {/* Contact Info Grid */}
-            <div className="grid grid-cols-1 gap-4 mb-6">
-              
-              {/* Working Hours */}
-              <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:shadow-md transition-shadow duration-300">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                  <FaCalendarCheck className="text-blue-600 text-lg" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">{t('hours.title')}</p>
-                  <p className="text-gray-900 font-bold text-sm">
-                    {t('hours.weekdays')}: {t('hours.weekdaysTime')}
-                  </p>
-                  <p className="text-red-600 font-semibold text-sm">
-                    {t('hours.friday')}: {t('hours.fridayTime')}
-                  </p>
-                </div>
-              </div>
-
-              {/* Phone */}
-              <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:shadow-md transition-shadow duration-300">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                  <FaPhoneVolume className="text-green-600 text-lg" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">Contact</p>
-                  <a 
-                    href="tel:+201234567890" 
-                    className="text-gray-900 font-bold text-sm hover:text-green-600 transition-colors duration-300 block"
-                  >
-                    info@sogc-construction.com
-                  </a>
-                  <a 
-                    href="tel:+201234567890" 
-                    className="text-gray-900 font-bold text-sm hover:text-green-600 transition-colors duration-300 block"
-                  >
-                    +123 456 7890
-                  </a>
-                </div>
-              </div>
-
-              {/* Address */}
-              <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:shadow-md transition-shadow duration-300">
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                  <GrMapLocation className="text-orange-600 text-lg" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">Location</p>
-                  <p className="text-gray-900 font-bold text-sm">
-                    123 Main St, Anytown, USA
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        
 
           {/* Desktop Layout */}
           <div className="hidden md:block">

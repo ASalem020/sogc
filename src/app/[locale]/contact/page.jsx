@@ -215,7 +215,7 @@ export default function Contact() {
         </div>
 
         {/* --- INFO --- */}
-        <div className="w-full h-full relative bg-[url('/jpg1.jpg')] bg-cover bg-center rounded-2xl overflow-hidden border border-black/40 shadow-[0_0_30px_rgba(0,0,0,0.15)] transition hover:translate-y-[-4px] hover:shadow-[0_0_40px_rgba(0,0,0,0.25)] active:translate-y-[-4px] active:shadow-[0_0_40px_rgba(0,0,0,0.25)]">
+        <div className="w-full h-full hidden md:block relative bg-[url('/jpg1.jpg')] bg-cover bg-center rounded-2xl overflow-hidden border border-black/40 shadow-[0_0_30px_rgba(0,0,0,0.15)] transition hover:translate-y-[-4px] hover:shadow-[0_0_40px_rgba(0,0,0,0.25)] active:translate-y-[-4px] active:shadow-[0_0_40px_rgba(0,0,0,0.25)]">
           <div className="absolute inset-0 bg-white/70"></div>
           <div className="relative z-10 h-full flex flex-col justify-between p-8 text-gray-100">
             <div>

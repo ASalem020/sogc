@@ -101,7 +101,7 @@ export default function Navbar() {
     <header>
       {/* Desktop Navbar */}
       <nav
-        className={`absolute text-white hidden md:block -top-11 left-0 right-0 bg-black z-50 transition-transform duration-500 p-2 container mx-auto justify-between rounded-[150px] ${
+        className={`absolute text-white hidden md:block  -top-11 left-0 right-0 bg-black z-50 transition-transform duration-500 p-2 container mx-auto justify-between rounded-[150px] ${
           isSticky ? " fixed top-0 shadow-md !my-0 " : "  "
         } ${show ? "translate-y-3" : "-translate-y-full"}`}
       >
@@ -141,12 +141,12 @@ export default function Navbar() {
             {/* Language Switcher and CTA */}
             <div className="flex items-center gap-5">
               <LanguageSwitcher />
-              <Link 
+              {/* <Link 
                 href={getLocalizedPath("/contact")}
                 className="rounded-4xl text-[1.4rem] p-2 hover:!-translate-y-0.5 bg-white !text-black active:scale-95 transition-all duration-300 cursor-pointer"
               >
                 {t('startNewProject')}
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

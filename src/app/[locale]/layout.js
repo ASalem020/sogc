@@ -2,6 +2,7 @@ import "../globals.css";
 import Navbar from "../_Components/navbar/Navbar";
 import Footer from "../_Components/Footer/Footer";
 import HeaderSocial from "../_Components/header-social/HeaderSocial";
+import FloatingContact from "../_Components/FloatingContact/FloatingContact";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -89,8 +90,14 @@ export async function generateMetadata({ params, searchParams }) {
     keywords: isArabic
       ? [
           "سوجك",
+          "sogc",
           "شركة سوجك",
+          "سوجك للمقاولات",
+          "شركة مقاولات",
+          "شركة سوجك للمقاولات والاستشارات",
           "شركة مقاولات مصر",
+          "شركة مقاولات السويس",
+          "شركة مقاولات العاشر من رمضان",
           "استشارات هندسية",
           "مشاريع سوجك",
           "بناء في مصر",
@@ -98,17 +105,26 @@ export async function generateMetadata({ params, searchParams }) {
           "تشطيبات كاملة",
           "حفر وتربة",
           "معدات ثقيلة",
+          "بنية تحتية مصر",
+          "مقاول معتمد مصر",
         ]
       : [
+          "sogc",
+          "SOGC",
           "SOGC Construction",
+          "SOGC Egypt",
           "Construction Company Egypt",
           "Engineering Consultants Egypt",
           "SOGC Projects",
           "Building Contractors Egypt",
-          "General Contracting",
-          "Full Finishing",
+          "General Contracting Egypt",
+          "Full Finishing Services",
           "Excavation Services",
           "Heavy Equipment",
+          "Infrastructure Egypt",
+          "Suez Construction",
+          "10th of Ramadan Construction",
+          "Egyptian Contractor",
         ],
     robots: {
       index: true,
@@ -161,20 +177,38 @@ export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
   if (!["en", "ar"].includes(locale)) notFound();
 
+  const isArabic = locale === "ar";
   const messages = await getMessages({ locale });
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <head>
+        {/* Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "SOGC Construction & Consultants",
+              name: isArabic ? "شركة سوجك للمقاولات والاستشارات" : "SOGC Construction & Consultants",
+              alternateName: isArabic ? "سوجك للمقاولات" : "SOGC",
               url: "https://www.sogc-construction.com",
-              logo: "https://www.sogc-construction.com/favicon.ico",
+              logo: "https://www.sogc-construction.com/logo1.png",
+              image: "https://www.sogc-construction.com/logo1.png",
+              description: isArabic 
+                ? "شركة سوجك للمقاولات والاستشارات من الشركات الرائدة في مصر في مجال البناء والهندسة وإدارة المشاريع. نقدم خدمات شاملة في المقاولات العامة والتشطيبات."
+                : "SOGC Construction & Consultants is a leading construction and consulting company in Egypt delivering sustainable engineering and architectural solutions.",
+              foundingDate: "2018",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Suez",
+                addressRegion: "Suez Governorate",
+                addressCountry: "EG",
+              },
+              areaServed: {
+                "@type": "Country",
+                name: "Egypt",
+              },
               sameAs: [
                 "https://www.facebook.com/sogcconstruction",
                 "https://www.linkedin.com/company/sogc-construction",
@@ -185,7 +219,86 @@ export default async function LocaleLayout({ children, params }) {
                 contactType: "Customer Service",
                 areaServed: "EG",
                 availableLanguage: ["English", "Arabic"],
+                email: "info@sogc-construction.com",
               },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.8",
+                reviewCount: "50",
+              },
+            }),
+          }}
+        />
+        {/* Local Business Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id": "https://www.sogc-construction.com",
+              name: isArabic ? "شركة سوجك للمقاولات" : "SOGC Construction",
+              image: "https://www.sogc-construction.com/logo1.png",
+              telephone: "+20XXXXXXXXXX",
+              email: "info@sogc-construction.com",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Suez",
+                addressLocality: "Suez",
+                addressRegion: "Suez Governorate",
+                addressCountry: "EG",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: "29.9668",
+                longitude: "32.5498",
+              },
+              url: "https://www.sogc-construction.com",
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday"],
+                  opens: "08:00",
+                  closes: "17:00",
+                },
+              ],
+              priceRange: "$$",
+            }),
+          }}
+        />
+        {/* BreadcrumbList Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: isArabic ? "الرئيسية" : "Home",
+                  item: `https://www.sogc-construction.com/${locale}`,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: isArabic ? "من نحن" : "About",
+                  item: `https://www.sogc-construction.com/${locale}/about`,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: isArabic ? "خدماتنا" : "Services",
+                  item: `https://www.sogc-construction.com/${locale}/services`,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 4,
+                  name: isArabic ? "مشاريعنا" : "Projects",
+                  item: `https://www.sogc-construction.com/${locale}/projects`,
+                },
+              ],
             }),
           }}
         />
@@ -201,6 +314,7 @@ export default async function LocaleLayout({ children, params }) {
             {children}
           </main>
           <Footer />
+          <FloatingContact />
         </NextIntlClientProvider>
       </body>
     </html>
