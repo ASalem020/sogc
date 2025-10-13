@@ -29,9 +29,9 @@ export default function PartnersCarousel() {
   ];
 
   return (
-    <section className=" py-20">
+    <section className=" py-10 md:pt-17">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className={`text-4xl font-bold text-center mb-10 `}>
+        <h2 className={`text-xl md:text-3xl font-bold text-center mb-10 `}>
           {t('partners')}
         </h2>
 

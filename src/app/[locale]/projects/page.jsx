@@ -19,18 +19,19 @@ export default function Projects() {
       <div className="md:mx-10 md:py-20 md:px-10 flex flex-col gap-12">
         {/* Title Section */}
         <FadeInAnimation direction="up" delay={0.2} duration={0.8}>
-          <div className="relative flex flex-col">
+          <div className="relative flex flex-col items-center">
             <h1
-              className={`md:text-4xl text-lg font-bold md:px-10 md:p-0 p-10 pb-0 
-              before:content-[''] before:absolute md:before:-left-15 before:left-3 md:before:top-5 before:top-[14px]
-              md:before:w-20 before:w-0 md:before:h-1 before:bg-black 
-              ${afterText} text-center after:italic after:absolute md:after:left-6 after:left-1/2 after:-translate-x-1/2 
-              md:after:-translate-x-0 md:after:-top-14 after:-top-8 md:after:text-[5rem] after:text-[3rem] after:text-black/15
-              ${
-                isArabic
-                  ? "md:text-right before:-right-15 after:left-1/2 after:-translate-x-1/2 md:after:-right-6 md:after:-top-19 after:-top-12"
-                  : "md:text-left before:-left-15 after:left-1/2 after:-translate-x-1/2 md:after:-top-16 after:-top-12"
-              }`}
+              className={`relative md:text-4xl text-[1.7rem] font-bold px-10
+                before:content-[" "] before:absolute before:top-5 md:before:w-20 before:w-10 before:h-1 before:bg-black
+                after:content-[" "] after:absolute after:top-5 md:after:w-20 after:w-10 after:h-1 after:bg-black
+                 before:-left-2  after:-right-2
+                 md:before:-left-15  md:after:-right-15
+                 ${
+                  isArabic
+                    ? ""
+                    : ""
+                }
+                `}
             >
               {t("title")}
             </h1>

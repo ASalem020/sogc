@@ -55,35 +55,38 @@ export default function About() {
 
   return (
     <main>
+      
         <div className="bg-gray-100 overflow-hidden relative">
-          <div className="bg-[url('/herocar1.jpg')] bg-cover z-0 opacity-20 bg-center absolute top-0 left-0 w-full h-full"></div>
+          
           <div className="py-10 md:mx-10 grid grid-cols-1 md:grid-cols-3 md:min-h-screen min-h-[50vh] z-10 relative">
             {/* Left Section */}
+            {/* Title */}
             <motion.div
-              className="md:pt-20 md:px-10 py-10 px-5 md:col-span-2"
+              className="md:pt-20  md:col-span-3"
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              {/* Title */}
               <motion.div
-                className="relative flex flex-col md:gap-5 gap-2"
+                className="relative justify-center items-center px-2 flex flex-col md:gap-5 gap-2"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
               >
                 <h1
-                  className={`relative md:text-4xl text-2xl font-bold px-10
-                    before:content-[" "] before:absolute before:top-5 md:before:w-20 before:w-0 before:h-1 before:bg-black
-                    after:content-['SOGC'] after:absolute after:-translate-y-1/2 text-center
+                  className={`relative md:text-4xl text-[1.7rem] font-bold px-10
+                    before:content-[" "] before:absolute before:top-5 md:before:w-20 before:w-10 before:h-1 before:bg-black
+                    after:content-[" "] after:absolute after:top-5 md:after:w-20 after:w-10 after:h-1 after:bg-black
+                     before:-left-2  after:-right-2
+                     md:before:-left-15  md:after:-right-15
                     ${
                       isArabic
-                        ? "md:text-right before:-right-15 after:right-1/2 md:after:right-40 after:translate-x-1/2 md:after:-top-10 after:-top-12"
-                        : "md:text-left before:-left-15 after:left-1/2 after:-translate-x-1/2 md:after:left-40 md:after:-top-10 after:-top-12"
+                        ? ""
+                        : ""
                     }
-                    md:after:text-[5rem] after:text-[3rem] after:text-black/25 after:italic
+                    
                   `}
                 >
                   {t("title")}{" "}
@@ -103,7 +106,7 @@ export default function About() {
                 </motion.p>
 
                 <motion.p
-                  className="text-sm md:text-lg"
+                  className="text-sm text-center md:text-lg"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -113,7 +116,17 @@ export default function About() {
                 </motion.p>
               </motion.div>
 
-              {/* Services Accordion */}
+              
+            </motion.div>
+            {/* Services Accordion */}
+            <motion.div
+              className=" md:px-10 pt-10 px-5 md:col-span-2"
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -127,10 +140,10 @@ export default function About() {
                       value={`item-${service.id}`}
                       className="hover:shadow-md transition-all duration-300"
                     >
-                      <AccordionTrigger className="text-sm md:text-lg font-semibold px-4 py-3 hover:bg-gray-50 transition-all duration-300">
+                      <AccordionTrigger className="text-sm md:text-lg font-semibold px-1.5 py-3 hover:bg-gray-50 transition-all duration-300">
                         {service.title}
                       </AccordionTrigger>
-                      <AccordionContent className="px-4 pb-4 text-gray-600 text-sm leading-relaxed">
+                      <AccordionContent className="px-4 pb-4 bg-white/20 text-gray-600 text-sm leading-relaxed">
                         {service.description}
                       </AccordionContent>
                     </AccordionItem>
@@ -141,7 +154,7 @@ export default function About() {
 
             {/* Right Section - Image */}
             <motion.div
-              className="px-20 md:py-0 md:p-0 flex justify-center items-center md:col-span-1"
+              className="px-5 md:py-0 md:p-0 flex justify-center items-center md:col-span-1"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -150,15 +163,15 @@ export default function About() {
               <Image
                 src="/png 1.png"
                 alt="about"
-                width={1000}
-                height={1000}
-                className="w-[40%] h-[40%]  mt-60 md:w-[50%] md:h-[50%]"
+                width={1200}
+                height={1200}
+                className="w-[40%] h-[40%]   md:w-[50%] md:h-[50%]"
               />
             </motion.div>
 
             {/* Footer */}
             <motion.h1
-              className="text-center w-full mx-auto md:text-xl font-semibold lg:col-span-3"
+              className="text-center px-2 w-full text-sm mx-auto md:text-lg font-semibold col-span-3"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

@@ -309,7 +309,7 @@ export default async function LocaleLayout({ children, params }) {
       >
         <NextIntlClientProvider messages={messages} locale={locale}>
           <HeaderSocial />
-          <main className="relative md:mt-7">
+          <main className="relative ">
             <Navbar />
             {children}
           </main>

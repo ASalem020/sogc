@@ -75,14 +75,20 @@ export default function Contact() {
   const isRTL = locale === 'ar';
 
   return (
-    <section className={`px-3 ${isRTL ? 'text-end' : 'text-start'} md:px-10 lg:px-20  py-16 font-[Cairo]`}>
+    <section id="contact" className={`px-3 ${isRTL ? 'text-end' : 'text-start'} md:px-10 lg:px-20  py-3 md:py-16 font-[Cairo]`}>
       <div className="container mx-auto">
       <FadeInAnimation direction="up" delay={0.2} duration={0.8}>
-        <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-black mb-3">
+        <header className="relative flex flex-col items-center mb-12">
+          <h1 className={`relative md:text-4xl text-[1.7rem] font-bold px-10
+                    before:content-[" "] before:absolute before:top-5 md:before:w-20 before:w-10 before:h-1 before:bg-black
+                    after:content-[" "] after:absolute after:top-5 md:after:w-20 after:w-10 after:h-1 after:bg-black
+                     before:-left-2  after:-right-2 text-center
+                     md:before:-left-15  md:after:-right-15
+                     
+                    `}>
             {t('title')}
           </h1>
-          <p className="text-lg text-gray-500">
+          <p className="text-lg !text-center text-gray-500">
             {t('subtitle')}
           </p>
         </header>

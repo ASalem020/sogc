@@ -111,12 +111,19 @@
 }
 
 @layer base {
+  
+
   * {
     @apply border-border outline-ring/50;
     /* Prevent double-tap zoom on mobile */
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
   }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  
   body {
     @apply bg-background text-foreground;
     /* Improve touch scrolling on mobile */

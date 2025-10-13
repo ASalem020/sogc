@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-b from-gray-50 to-gray-200 text-black">
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12 lg:py-16">
+      <div className="container mx-auto px-4 pt-4 pb-12 lg:py-16">
         <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
           
           {/* Company Info Section */}
@@ -33,13 +33,12 @@ export default function Footer() {
             {/* Social Media */}
             <SocialMedia />
           </div>
-
           {/* Quick Links */}
-          <div className="col-span-1 md:col-span-2 lg:col-span-2">
+          <div className="col-span-3 md:col-span-2 lg:col-span-2">
             <h3 className="text-black text-center md:text-start font-bold text-lg mb-4 border-b border-gray-700 pb-2">
               {t('quickLinks.title')}
             </h3>
-            <nav className="space-y-2 ">
+            <nav className="space-y-2 flex flex-wrap justify-center md:block  ">
               <Link href={`/${locale}`} className="block text-black  hover:-translate-y-1 hover:translate-x-1 w-fit hover:bg-black hover:text-white rounded-2xl px-2  transition-all duration-300">
                 {t('quickLinks.home')}
               </Link>
@@ -61,8 +60,9 @@ export default function Footer() {
             </nav>
           </div>
 
+
           {/* Services */}
-          <div className="col-span-1 md:col-span-2 lg:col-span-2">
+          <div className="col-span-2 md:col-span-2 hidden md:block lg:col-span-2">
             <h3 className="text-black font-bold text-lg mb-4 border-b border-gray-700 pb-2">
               {t('services.title')}
             </h3>
@@ -92,8 +92,8 @@ export default function Footer() {
           </div>
 
           {/* Contact & Working Hours */}
-          <div className="col-span-1 md:col-span-2 lg:col-span-4">
-            <h3 className="text-black font-bold text-lg mb-4 border-b border-gray-700 pb-2">
+          <div className="col-span-3 md:col-span-2 lg:col-span-4">
+            <h3 className="text-black font-bold text-center md:text-start text-lg mb-4 border-b border-gray-700 pb-2">
               {t('contact.title')}
             </h3>
             <div className="space-y-3 mb-6">
@@ -126,7 +126,7 @@ export default function Footer() {
             </div>
 
             {/* Working Hours Desktop */}
-            <div className="bg-gray-200 hidden md:block rounded-lg p-4">
+            <div className="bg-gray-200  rounded-lg p-4">
               <h4 className="text-black font-semibold text-sm mb-3 flex items-center gap-2">
                 <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -148,7 +148,7 @@ export default function Footer() {
 
         </div>
 {/* Working Hours Mobile */}
-            <div className="bg-gray-200 md:hidden mt-5 rounded-lg p-4">
+            {/* <div className="bg-gray-200 md:hidden mt-5 rounded-lg p-4">
               <h4 className="text-black font-semibold text-sm mb-3 flex items-center gap-2">
                 <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -165,7 +165,7 @@ export default function Footer() {
                   <span className="text-red-400 font-medium">{t('hours.fridayTime')}</span>
                 </div>
               </div>
-            </div>
+            </div> */}
         {/* Google Maps Section */}
         <div className="mt-12">
           <h3 className="text-black font-bold text-lg mb-4 text-center">

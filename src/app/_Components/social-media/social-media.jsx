@@ -8,14 +8,14 @@ export default function SocialMedia() {
   const socials = [
     {
       name: "Facebook",
-      href: "https://facebook.com",
+      href: "https://www.facebook.com/share/1CgfApNSqg/?mibextid=wwXIfr",
       icon: FaFacebookF,
       color: "hover:text-white",
       bg: "hover:!bg-blue-500",  
     },
     {
       name: "Instagram",
-      href: "https://instagram.com",
+      href: "https://www.instagram.com/sogcconstruction/",
       icon: FaInstagram,
       color: "hover:text-white",
       bg: "hover:!bg-gradient-to-r from-purple-800 via-pink-500 via-red-500 to-yellow-700",  

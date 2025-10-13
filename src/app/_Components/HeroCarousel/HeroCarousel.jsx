@@ -55,9 +55,9 @@ import {
                   <p className="max-w-lg text-lg md:text-xl">
                     {t('subtitle')}
                   </p>
-                  <button className="mt-6 px-8 py-3 bg-white text-black rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300">
+                  <a href="#contact" className="mt-6 px-8 py-3 bg-white text-black rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300 ">
                     {t('cta')}
-                  </button>
+                  </a >
                 </div>
               </div>
             

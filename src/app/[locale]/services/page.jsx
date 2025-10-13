@@ -54,18 +54,28 @@ function ServiceCard({ service, index }) {
         onTouchEnd={() => setIsActive(false)}
       >
         <div className="relative overflow-hidden rounded-lg">
-          
-            <Image
-              width={1000}
-              height={1000}
-              className="rounded-lg h-[12rem] md:h-[15rem] lg:h-[18rem] relative object-cover object-center transition-transform duration-700 group-hover:scale-110"
-              src={`${service.image}`}
-              alt={service.title}
-            />
-         
+          {service.image === "/vid.mp4" ? (
+
+        <video
+    src={`${service.image}`}
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="rounded-lg h-[12rem] md:h-[15rem] lg:h-[18rem] relative object-cover object-center transition-transform duration-700  w-full"
+  ></video>
+            ) : (
+              <Image
+                width={1000}
+                height={1000}
+                className="rounded-lg h-[12rem] md:h-[15rem] lg:h-[18rem] relative object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                src={`${service.image}`}
+                alt={service.title}
+              />
+            )}
         </div>
         <div
-          className={`absolute shadow-lg md:p-5 lg:min-h-[145px] flex flex-col gap-2 items-center xl:top-40 2xl:top-50 xl:left-10 xl:right-10 lg:top-45 top-35 lg:left-5 lg:right-5 left-5 right-5 bg-white transition-all duration-500 p-3 border-b-black rounded-lg ${
+          className={`absolute shadow-lg md:p-5 lg:min-h-[145px] flex flex-col gap-2 items-center xl:top-40 2xl:top-50 xl:left-10 xl:right-10 lg:top-45 top-35 lg:left-5 lg:right-5 left-5 right-5 bg-white/80 transition-all duration-500 p-1.5  border-b-black rounded-lg ${
             isActive
               ? "border-b-4 -translate-y-2"
               : "group-hover:border-b-4 group-hover:-translate-y-2"
@@ -75,7 +85,7 @@ function ServiceCard({ service, index }) {
             {service.title}{" "}
             <span className="text-gray-400">{service.subtitle}</span>
           </h3>
-          <p className="lg:text-[13px] xl:text-[16px] text-sm font-light text-gray-500 text-center">
+          <p className="lg:text-[13px] xl:text-[16px] text-sm font-light text-black text-center">
             {service.description}
           </p>
         </div>
@@ -99,7 +109,7 @@ export default function Services() {
       title: t("1.title"),
       subtitle: t("1.subtitle"),
       description: t("1.description"),
-      image: "/herocar3.webp",
+      image: "/gencons.jpeg",
     },
     {
       id: 2,
@@ -113,7 +123,7 @@ export default function Services() {
       title: t("3.title"),
       subtitle: t("3.subtitle"),
       description: t("3.description"),
-      image: "/herocar1.jpg",
+      image: "/vid.mp4",
     },
     {
       id: 4,
@@ -139,21 +149,24 @@ export default function Services() {
   ];
 
   return (
-    <div className="my-10 md:mt-30 md:mx-10 md:min-h-screen min-h-[50vh]">
-      <div className="md:py-20 md:px-10 py-10 px-5">
+    <div className="mt-10 md:mt-30 md:mx-10 md:min-h-screen min-h-[50vh]">
+      <div className="md:py-10 md:px-10  px-5">
         
         {/* Header Section */}
         <FadeInAnimation direction="up" delay={0.2} duration={0.8}>
-          <div className="relative flex flex-col md:gap-5 gap-2 items-center md:items-start">
+          <div className="relative flex flex-col md:gap-5 gap-2 items-center ">
             <h1
-              className={`md:text-3xl lg:text-4xl text-2xl text-center md:text-left font-bold  
-              before:content-[" "] before:absolute ${
-                isArabic ? "before:-right-15" : "before:-left-15"
-              } px-10 before:top-5  
-              md:before:w-20 before:w-0 before:h-1 before:bg-black 
-              ${afterText} after:absolute md:after:left-55 after:left-1/2  
-              after:-translate-x-1/2 md:after:-top-20  after:-top-18 
-              md:after:text-[5rem] after:text-[3rem] after:text-black/25 after:italic`}
+              className={`relative md:text-4xl text-[1.7rem] font-bold px-10
+                    before:content-[" "] before:absolute before:top-5 md:before:w-20 before:w-10 before:h-1 before:bg-black
+                    after:content-[" "] after:absolute after:top-5 md:after:w-20 after:w-10 after:h-1 after:bg-black
+                     before:-left-2  after:-right-2 text-center
+                     md:before:-left-15  md:after:-right-15
+                     ${
+                      isArabic
+                        ? ""
+                        : ""
+                    }
+                    `}
             >
               {t("title")}{" "}
               <span className="text-black">{t("titleHighlight")}</span>
@@ -161,9 +174,7 @@ export default function Services() {
             
             <FadeInAnimation direction="up" delay={0.3} duration={0.8}>
               <p
-                className={`lg:text-lg text-sm text-center ${
-                  isArabic ? "md:text-right" : "md:text-left"
-                }`}
+                className={`lg:text-lg text-sm text-center `}
               >
                 {t("subtitle")}
               </p>
@@ -180,7 +191,7 @@ export default function Services() {
           delay={0.6}
           duration={0.8}
           distance={40}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-16"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 "
         >
           {services.map((service, index) => (
             <ServiceCard key={service.id} service={service} index={index} />
@@ -189,7 +200,7 @@ export default function Services() {
 
         {/* Partners Carousel */}
         <FadeInAnimation direction="up" delay={1.2} duration={0.8}>
-          <div className="mt-20">
+          <div className="mt-5">
             <PartnersCarousel />
           </div>
         </FadeInAnimation>

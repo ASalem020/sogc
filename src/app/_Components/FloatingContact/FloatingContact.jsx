@@ -48,9 +48,9 @@ export default function FloatingContact() {
 
   // Button positions when expanded (circular layout)
   const getButtonPosition = (index) => {
-    const radius = 80; // Distance from main button
-    const startAngle = isArabic ? 180 : 0; // Start from left for Arabic, right for English
-    const angleStep = 30; // Degrees between buttons
+    const radius = 120; // Distance from main button -- change this to change the distance from the main button
+    const startAngle = isArabic ? 0 : 0; // Start from left for Arabic, right for English -- change this to change the start angle
+    const angleStep = 30; // Degrees between buttons -- change this to change the degrees between buttons
     const angle = startAngle + (index * angleStep);
     const radian = (angle * Math.PI) / 180;
     
@@ -106,7 +106,7 @@ export default function FloatingContact() {
                     {/* Tooltip */}
                     <span
                       className={`absolute ${
-                        isArabic ? "right-16" : "left-16"
+                        isArabic ? "left-16" : "right-16"
                       } top-1/2 -translate-y-1/2 bg-gray-900 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-lg`}
                     >
                       {action.label}

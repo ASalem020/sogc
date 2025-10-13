@@ -21,9 +21,9 @@ export default function Navbar() {
       // check if mobile screen
       let scrollPoint = 0;
       if (window.innerWidth < 768) {
-        scrollPoint = window.innerHeight * 0.05;
+        scrollPoint = window.innerHeight * 0.02;
       } else {
-        scrollPoint = window.innerHeight * 0.317;
+        scrollPoint = window.innerHeight * 0.240;
       }
 
       setIsSticky(window.scrollY > scrollPoint);
@@ -101,7 +101,7 @@ export default function Navbar() {
     <header>
       {/* Desktop Navbar */}
       <nav
-        className={`absolute text-white hidden md:block  -top-11 left-0 right-0 bg-black z-50 transition-transform duration-500 p-2 container mx-auto justify-between rounded-[150px] ${
+        className={`absolute text-white hidden md:block  -top-11 left-0 right-0 bg-black z-50 transition-transform duration-500 p-2  container   xl:max-w-6xl   mx-auto justify-between rounded-[150px] ${
           isSticky ? " fixed top-0 shadow-md !my-0 " : "  "
         } ${show ? "translate-y-3" : "-translate-y-full"}`}
       >
@@ -160,7 +160,7 @@ export default function Navbar() {
             show ? "translate-y-0" : "-translate-y-full"
           }`}
         >
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between px-4 items-center">
             {/* Mobile Logo */}
             <div className="flex items-center gap-3">
               <img
@@ -168,8 +168,8 @@ export default function Navbar() {
                 alt="logo"
                 className="h-8 w-8"
               />
-              <SocialMedia/>
             </div>
+              <SocialMedia/>
 
             {/* Mobile Menu Button */}
             <button
