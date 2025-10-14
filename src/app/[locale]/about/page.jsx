@@ -58,45 +58,37 @@ export default function About() {
       
         <div className="bg-gray-100 overflow-hidden relative">
           
-          <div className="py-10 md:mx-10 grid grid-cols-1 md:grid-cols-3 md:min-h-screen min-h-[50vh] z-10 relative">
-            {/* Left Section */}
+          <div className="py-10 md:mx-10 flex flex-col md:grid md:grid-cols-3 md:min-h-screen min-h-[50vh] z-10 relative">
             {/* Title */}
+            
             <motion.div
-              className="md:pt-20  md:col-span-3"
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <motion.div
-                className="relative justify-center items-center px-2 flex flex-col md:gap-5 gap-2"
+                className="w-full col-span-3 flex flex-col px-3 gap-2   items-center justify-center"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
               >
                 <h1
-                  className={`relative md:text-4xl text-[1.7rem] font-bold px-10
-                    before:content-[" "] before:absolute before:top-5 md:before:w-20 before:w-10 before:h-1 before:bg-black
-                    after:content-[" "] after:absolute after:top-5 md:after:w-20 after:w-10 after:h-1 after:bg-black
-                     before:-left-2  after:-right-2
-                     md:before:-left-15  md:after:-right-15
-                    ${
-                      isArabic
-                        ? ""
-                        : ""
-                    }
-                    
+                className={`relative md:text-4xl text-[1.7rem] font-bold px-10
+                  before:content-[" "] before:absolute before:top-5 md:before:w-20 before:w-10 before:h-1 before:bg-black
+                  after:content-[" "] after:absolute after:top-5 md:after:w-20 after:w-10 after:h-1 after:bg-black
+                   before:-left-2  after:-right-2 text-center
+                   md:before:-left-15  md:after:-right-15
+                   ${
+                    isArabic
+                      ? ""
+                      : ""
+                  }
                   `}
                 >
                   {t("title")}{" "}
-                  <span className="text-black">{t("titleHighlight")}</span>
+                  <span className="text-black text-center">{t("titleHighlight")}</span>
                 </h1>
 
                 <motion.p
-                  className={`text-sm md:text-lg text-center ${
-                    isArabic ? "md:text-right" : "md:text-left"
-                  }`}
+                  className={`text-sm  md:text-lg text-center 
+                    
+                  `}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -106,7 +98,7 @@ export default function About() {
                 </motion.p>
 
                 <motion.p
-                  className="text-sm text-center md:text-lg"
+                  className="text-sm  text-center md:text-lg"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -115,12 +107,21 @@ export default function About() {
                   {t("subtitle2")}
                 </motion.p>
               </motion.div>
+            {/* Left Section */}
+            <motion.div
+              className="   md:col-span-3"
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              
 
               
             </motion.div>
             {/* Services Accordion */}
             <motion.div
-              className=" md:px-10 pt-10 px-5 md:col-span-2"
+              className=" md:px-10  col-span-1 px-5 md:col-span-2"
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -154,7 +155,7 @@ export default function About() {
 
             {/* Right Section - Image */}
             <motion.div
-              className="px-5 md:py-0 md:p-0 flex justify-center items-center md:col-span-1"
+              className="px-5 md:py-0 md:p-0 flex justify-center items-center col-span-1 md:col-span-1"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -165,7 +166,7 @@ export default function About() {
                 alt="about"
                 width={1200}
                 height={1200}
-                className="w-[40%] h-[40%]   md:w-[50%] md:h-[50%]"
+                className="w-[30%] h-[30%] pb-2 md:pb-0   md:w-[50%] md:h-[50%]"
               />
             </motion.div>
 
