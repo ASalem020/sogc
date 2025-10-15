@@ -121,7 +121,7 @@ export default function About() {
             </motion.div>
             {/* Services Accordion */}
             <motion.div
-              className=" md:px-10  col-span-1 px-5 md:col-span-2"
+              className=" md:px-10  col-span-1 px-5 md:col-span-2 md:flex md:flex-col md:justify-center"
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -155,19 +155,21 @@ export default function About() {
 
             {/* Right Section - Image */}
             <motion.div
-              className="px-5 md:py-0 md:p-0 flex justify-center items-center col-span-1 md:col-span-1"
+              className="px-5 md:py-0 md:p-0 flex justify-center items-start md:items-center col-span-1 md:col-span-1"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <Image
-                src="/png 1.png"
-                alt="about"
-                width={1200}
-                height={1200}
-                className="w-[30%] h-[30%] pb-2 md:pb-0   md:w-[50%] md:h-[50%]"
-              />
+              <div className="relative w-full max-h-[400px] md:max-h-full flex justify-center items-center">
+                <Image
+                  src="/png 1.png"
+                  alt="about"
+                  width={1200}
+                  height={1200}
+                  className="w-full max-h-[200px]  md:max-h-[400px] object-contain"
+                />
+              </div>
             </motion.div>
 
             {/* Footer */}
