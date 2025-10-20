@@ -174,7 +174,7 @@ export default function About() {
 
             {/* Footer */}
             <motion.h1
-              className="text-center px-2 w-full text-sm mx-auto md:text-lg font-semibold col-span-3"
+              className="text-center mt-5 px-2 w-full text-sm mx-auto md:text-lg font-semibold col-span-3"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

@@ -12,37 +12,18 @@ import {
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function FAQSection() {
-  const faqs = [
-    {
-      question: "What services does SOGC Construction offer?",
-      answer:
-        "We provide a full range of construction and consultation services, including project design, execution, and management with top-quality standards.",
-    },
-    {
-      question: "How can I contact your team?",
-      answer:
-        "You can reach us through the Contact page on our website or email us directly at info@sogc-construction.com.",
-    },
-    {
-      question: "Do you work on international projects?",
-      answer:
-        "Yes, our team is experienced in handling projects both locally and internationally.",
-    },
-    {
-      question: "What makes SOGC different from other construction companies?",
-      answer:
-        "We combine innovation, sustainability, and client-focused solutions to deliver exceptional results every time.",
-    },
-  ];
+  const t = useTranslations('faq');
+  const faqs = t.raw('items');
 
   return (
     <section className="bg-gray-50 py-20 px-4 md:px-10">
       <div className="max-w-3xl mx-auto text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+        <h2 className="text-4xl font-bold mb-4">{t('title')}</h2>
         <p className="text-gray-600">
-          Find answers to common questions about our construction services.
+          {t('description')}
         </p>
       </div>
 
@@ -67,7 +48,7 @@ export default function FAQSection() {
               <DrawerFooter>
                 <DrawerClose asChild>
                   <Button variant="outline" className="mt-4">
-                    Close
+                    {t('close')}
                   </Button>
                 </DrawerClose>
               </DrawerFooter>

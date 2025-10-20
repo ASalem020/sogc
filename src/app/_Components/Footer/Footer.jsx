@@ -39,22 +39,22 @@ export default function Footer() {
               {t('quickLinks.title')}
             </h3>
             <nav className="space-y-2 flex flex-wrap justify-center md:block  ">
-              <Link href={`/${locale}`} className="block text-black  hover:-translate-y-1 hover:translate-x-1 w-fit hover:bg-black hover:text-white rounded-2xl px-2  transition-all duration-300">
+              <Link href={`/${locale}`} className="block text-black active:-translate-y-1 active:translate-x-1 hover:-translate-y-1 hover:translate-x-1 w-fit active:bg-black active:text-white hover:bg-black hover:text-white rounded-2xl px-2 transition-all duration-300">
                 {t('quickLinks.home')}
               </Link>
-              <Link href={`/${locale}/about`} className="block text-black  hover:-translate-y-1 hover:translate-x-1 w-fit hover:bg-black hover:text-white rounded-2xl px-2  transition-all duration-300">
+              <Link href={`/${locale}/about`} className="block text-black active:-translate-y-1 active:translate-x-1 hover:-translate-y-1 hover:translate-x-1 w-fit active:bg-black active:text-white hover:bg-black hover:text-white rounded-2xl px-2 transition-all duration-300">
                 {t('quickLinks.about')}
               </Link>
-              <Link href={`/${locale}/services`} className="block text-black  hover:-translate-y-1 hover:translate-x-1 w-fit hover:bg-black hover:text-white rounded-2xl px-2  transition-all duration-300">
+              <Link href={`/${locale}/services`} className="block text-black active:-translate-y-1 active:translate-x-1 hover:-translate-y-1 hover:translate-x-1 w-fit active:bg-black active:text-white hover:bg-black hover:text-white rounded-2xl px-2 transition-all duration-300">
                 {t('quickLinks.services')}
               </Link>
-              <Link href={`/${locale}/projects`} className="block text-black  hover:-translate-y-1 hover:translate-x-1 w-fit hover:bg-black hover:text-white rounded-2xl px-2  transition-all duration-300">
+              <Link href={`/${locale}/projects`} className="block text-black active:-translate-y-1 active:translate-x-1 hover:-translate-y-1 hover:translate-x-1 w-fit active:bg-black active:text-white hover:bg-black hover:text-white rounded-2xl px-2 transition-all duration-300">
                 {t('quickLinks.projects')}
               </Link>
-              <Link href={`/${locale}/contact`} className="block text-black  hover:-translate-y-1 hover:translate-x-1 w-fit hover:bg-black hover:text-white rounded-2xl px-2  transition-all duration-300">
+              <Link href={`/${locale}/contact`} className="block text-black active:-translate-y-1 active:translate-x-1 hover:-translate-y-1 hover:translate-x-1 w-fit active:bg-black active:text-white hover:bg-black hover:text-white rounded-2xl px-2 transition-all duration-300">
                 {t('quickLinks.contact')}
               </Link>
-              <Link href={`/${locale}/faq`} className="block text-black  hover:-translate-y-1 hover:translate-x-1 w-fit hover:bg-black hover:text-white rounded-2xl px-2  transition-all duration-300">
+              <Link href={`/${locale}/faq`} className="block text-black active:-translate-y-1 active:translate-x-1 hover:-translate-y-1 hover:translate-x-1 w-fit active:bg-black active:text-white hover:bg-black hover:text-white rounded-2xl px-2 transition-all duration-300">
                 {t('quickLinks.faq')}
               </Link>
             </nav>
@@ -67,22 +67,22 @@ export default function Footer() {
               {t('services.title')}
             </h3>
             <nav className="space-y-2">
-              <div className="text-black text-sm  hover:-translate-y-1 transition-all duration-300">
+              <div className="text-black text-sm active:-translate-y-1 hover:-translate-y-1 transition-all duration-300">
                 {t('services.construction')}
               </div>
-              <div className="text-black text-sm hover:-translate-y-1 transition-all duration-300">
+              <div className="text-black text-sm active:-translate-y-1 hover:-translate-y-1 transition-all duration-300">
                 {t('services.infrastructure')}
               </div>
-              <div className="text-black text-sm hover:-translate-y-1 transition-all duration-300">
+              <div className="text-black text-sm active:-translate-y-1 hover:-translate-y-1 transition-all duration-300">
                 {t('services.finishing')}
               </div>
-              <div className="text-black text-sm hover:-translate-y-1 transition-all duration-300">
+              <div className="text-black text-sm active:-translate-y-1 hover:-translate-y-1 transition-all duration-300">
                 {t('services.excavation')}
               </div>
-              <div className="text-black text-sm hover:-translate-y-1 transition-all duration-300">
+              <div className="text-black text-sm active:-translate-y-1 hover:-translate-y-1 transition-all duration-300">
                 {t('services.materials')}
               </div>
-              <div className="text-black text-sm hover:-translate-y-1 transition-all  hover:bg-black hover:text-white rounded-2xl px-2  duration-300 w-fit hover:translate-x-1">
+              <div className="text-black text-sm active:-translate-y-1 hover:-translate-y-0.5 transition-all active:bg-black active:text-white hover:bg-black hover:text-white rounded-2xl px-2 duration-300 w-fit active:translate-x-2 hover:translate-x-4">
               <Link href={`/${locale}/services`} className=" text-sm  ">
                 {t('services.all')}
               </Link>
@@ -111,7 +111,7 @@ export default function Footer() {
                 <svg className="w-5 h-5 text-black flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                 </svg>
-                <a href={`tel:${t('contact.phone')}`} className="text-sm text-black hover:text-black transition-all duration-300 hover:translate-x-1 hover:bg-black  rounded-2xl px-2">
+                <a href={`tel:${t('contact.phone')}`} className="text-sm text-black active:text-white hover:text-white transition-all duration-300 active:translate-x-1 hover:translate-x-1 active:bg-black hover:bg-black rounded-2xl px-2">
                   {t('contact.phone')}
                 </a>
               </div>
@@ -119,7 +119,7 @@ export default function Footer() {
                 <svg className="w-5 h-5 text-black flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
-                <a href={`mailto:${t('contact.email')}`} className="text-sm text-black  transition-all duration-300 hover:translate-x-1 hover:bg-black hover:text-white rounded-2xl px-2">
+                <a href={`mailto:${t('contact.email')}`} className="text-sm text-black transition-all duration-300 active:translate-x-1 hover:translate-x-1 active:bg-black hover:bg-black active:text-white hover:text-white rounded-2xl px-2">
                   {t('contact.email')}
                 </a>
               </div>
@@ -194,10 +194,10 @@ export default function Footer() {
               {t('copyright')}
             </p>
             <div className="flex gap-6">
-              <Link href={`/${locale}/privacy`} className="text-black hover:text-orange-500 transition-colors">
+              <Link href={`/${locale}/privacy`} className="text-black active:text-orange-500 hover:text-orange-500 transition-colors">
                 {t('privacy')}
               </Link>
-              <Link href={`/${locale}/terms`} className="text-black hover:text-orange-500 transition-colors">
+              <Link href={`/${locale}/terms`} className="text-black active:text-orange-500 hover:text-orange-500 transition-colors">
                 {t('terms')}
               </Link>
             </div>

@@ -159,7 +159,26 @@
   "faq": {
     "header": "FAQ",
     "title": "Frequently Asked Questions",
-    "description": "Find answers to common questions"
+    "description": "Find answers to common questions about our construction services.",
+    "close": "Close",
+    "items": [
+      {
+        "question": "What services does SOGC Construction offer?",
+        "answer": "We provide a full range of construction and consultation services, including project design, execution, and management with top-quality standards."
+      },
+      {
+        "question": "How can I contact your team?",
+        "answer": "You can reach us through the Contact page on our website or email us directly at info@sogc-construction.com."
+      },
+      {
+        "question": "Do you work on international projects?",
+        "answer": "Yes, our team is experienced in handling projects both locally and internationally."
+      },
+      {
+        "question": "What makes SOGC different from other construction companies?",
+        "answer": "We combine innovation, sustainability, and client-focused solutions to deliver exceptional results every time."
+      }
+    ]
   },
   "footer": {
     "about": {
