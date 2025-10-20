@@ -43,15 +43,26 @@ export default function HeaderSocial() {
 
       {/* Main Header */}
       <div className="bg-white">
-        <div className="container mx-auto px-1 ">
-          
+        <div className="container mx-auto px-1 flex justify-center items-center ">
+
+          {/* Logo */}
+              <div className="flex-shrink-0 ps-3 lg:block">
+                <Image
+                  src="/png 1.png"
+                  alt="SOGC Logo"
+                  width={200}
+                  height={80}
+                  className="md:h-35 h-25 w-auto hover:scale-105 transition-transform duration-300"
+                />
+              </div>
         
 
+
           {/* Desktop Layout */}
-          <div className=" md:block">
+          {/* <div className=" md:block">
             <div className="flex items-center justify-between md:justify-around">
               
-              {/* Logo */}
+              
               <div className="flex-shrink-0 ps-3 lg:block">
                 <Image
                   src="/png 1.png"
@@ -62,10 +73,10 @@ export default function HeaderSocial() {
                 />
               </div>
 
-              {/* Contact Information Grid */}
+              
               <div className="grid grid-cols-1 items-center gap-1.5">
                 
-                {/* Working Hours */}
+              
                 <div className="flex items-center gap-3 group hover:-translate-y-1 transition-all duration-300">
                   <div className="h-8 w-10 md:w-12 lg:w-14 lg:h-12  md:h-10 border-2 border-black rounded-full flex items-center justify-center group-hover:bg-black transition-all duration-300">
                     <FaCalendarCheck className="text-black group-hover:text-white text-lg transition-colors duration-300" />
@@ -81,7 +92,7 @@ export default function HeaderSocial() {
                   </div>
                 </div>
 
-                {/* Contact Details */}
+               
                 <div className="flex items-center gap-3 group hover:-translate-y-1 transition-all duration-300">
                   <div className="h-8 w-10 md:w-12 lg:w-15 lg:h-12   md:h-10 border-2 border-black rounded-full flex items-center justify-center group-hover:bg-black transition-all duration-300">
                     <FaPhoneVolume className="text-black group-hover:text-white text-lg transition-colors duration-300" />
@@ -103,7 +114,7 @@ export default function HeaderSocial() {
                   </div>
                 </div>
 
-                {/* Address */}
+               
                 <div className="flex items-center gap-3 group hover:-translate-y-1 transition-all duration-300">
                   <div className="h-8 w-10 md:w-12 lg:w-15 lg:h-12  md:h-10 border-2 border-black rounded-full flex items-center justify-center group-hover:bg-black transition-all duration-300">
                     <GrMapLocation className="text-black group-hover:text-white text-lg transition-colors duration-300" />
@@ -121,7 +132,7 @@ export default function HeaderSocial() {
 
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </header>
