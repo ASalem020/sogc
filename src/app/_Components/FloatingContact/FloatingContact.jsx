@@ -20,14 +20,14 @@ export default function FloatingContact() {
       id: 1,
       icon: <FaPhone className="text-white text-xl" />,
       label: isArabic ? "اتصل بنا" : "Call Us",
-      href: "tel:+201234567890",
+      href: "tel:+201103469000",
       bgColor: "bg-green-500 hover:bg-green-600",
     },
     {
       id: 2,
       icon: <FaWhatsapp className="text-white text-xl" />,
       label: isArabic ? "واتساب" : "WhatsApp",
-      href: "https://wa.me/201234567890?text=Hello%20SOGC",
+      href: "https://wa.me/01103469000?text=Hello%20SOGC",
       bgColor: "bg-emerald-500 hover:bg-emerald-600",
     },
     {

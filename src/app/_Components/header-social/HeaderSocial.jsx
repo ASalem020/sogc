@@ -106,10 +106,10 @@ export default function HeaderSocial() {
                       info@sogc-construction.com
                     </a>
                     <a 
-                      href="tel:+201234567890" 
+                      href="tel:+01103469000" 
                       className="text-gray-900 font-bold text-xs md:text-sm hover:text-green-600 transition-colors duration-300 block"
                     >
-                      +20 123 456 7890
+                      +20 110 346 9000
                     </a>
                   </div>
                 </div>
