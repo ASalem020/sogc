@@ -183,6 +183,12 @@
       }
     ]
   },
+  "statusBar": {
+    "clientsServed": "عملاء تم خدمتهم",
+    "projectsCompleted": "مشاريع مكتملة",
+    "satisfiedClients": "عملاء راضون",
+    "yearsExperience": "سنوات من الخبرة"
+  },
   "footer": {
     "about": {
       "title": "عن شركة سوجك",

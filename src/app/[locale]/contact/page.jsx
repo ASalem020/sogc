@@ -237,7 +237,7 @@ export default function Contact() {
                   <i className="fa-solid fa-envelope text-black"></i>
                 </div>
                 <div className={`flex items-center ${isRTL ? 'justify-end' : 'justify-start'} gap-3 bg-white/10 border border-black/30 rounded-xl p-3 hover:bg-white/20 active:bg-white/20 transition`}>
-                  <h4 className="text-sm text-black">+20 110 346 9000</h4>
+                  <h4 className="text-sm text-black text-left" dir="ltr">+20 110 346 9000</h4>
                   <i className="fa-solid fa-phone text-black"></i>
                 </div>
               </div>

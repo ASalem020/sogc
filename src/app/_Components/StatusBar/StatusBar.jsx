@@ -2,18 +2,20 @@
 
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import { useTranslations } from "next-intl";
 
 export default function StatusBar() {
+  const t = useTranslations("statusBar");
   const { ref, inView } = useInView({
     triggerOnce: true, // run only once
     threshold: 0.3, // start animation when 30% visible
   });
 
   const stats = [
-    { title: "Clients Served", value: 250, color: "text-blue-600" ,bg:"bg-blue-600"},
-    { title: "Projects Completed", value: 180, color: "text-green-600" ,bg:"bg-green-600"},
-    { title: "Satisfied Clients", value: 230, color: "text-yellow-600" ,bg:"bg-yellow-600"},
-    { title: "Years of Experience", value: 10, color: "text-red-600" ,bg:"bg-red-600"},
+    { title: t("clientsServed"), value: 250, color: "text-blue-600" ,bg:"bg-blue-600"},
+    { title: t("projectsCompleted"), value: 180, color: "text-green-600" ,bg:"bg-green-600"},
+    { title: t("satisfiedClients"), value: 230, color: "text-yellow-600" ,bg:"bg-yellow-600"},
+    { title: t("yearsExperience"), value: 10, color: "text-red-600" ,bg:"bg-red-600"},
   ];
 
   return (

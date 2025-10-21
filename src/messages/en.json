@@ -180,6 +180,12 @@
       }
     ]
   },
+  "statusBar": {
+    "clientsServed": "Clients Served",
+    "projectsCompleted": "Projects Completed", 
+    "satisfiedClients": "Satisfied Clients",
+    "yearsExperience": "Years of Experience"
+  },
   "footer": {
     "about": {
       "title": "About SOGC",
