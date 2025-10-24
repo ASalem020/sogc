@@ -12,6 +12,14 @@
     "faq": "FAQ",
     "startNewProject": "Start New Project"
   },
+  "breadcrumb": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Our Services",
+    "projects": "Our Projects",
+    "contact": "Contact Us",
+    "faq": "FAQ"
+  },
   "hero": {
     "title": "SOGC Construction - Building Egypt's Future",
     "subtitle": "sogc - Professional Construction & Consulting Services in Egypt",

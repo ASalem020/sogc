@@ -3,6 +3,7 @@ import Navbar from "../_Components/navbar/Navbar";
 import Footer from "../_Components/Footer/Footer";
 import HeaderSocial from "../_Components/header-social/HeaderSocial";
 import FloatingContact from "../_Components/FloatingContact/FloatingContact";
+import Breadcrumb from "../_Components/Breadcrumb/Breadcrumb";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -266,42 +267,6 @@ export default async function LocaleLayout({ children, params }) {
             }),
           }}
         />
-        {/* BreadcrumbList Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: isArabic ? "الرئيسية" : "Home",
-                  item: `https://www.sogc-construction.com/${locale}`,
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: isArabic ? "من نحن" : "About",
-                  item: `https://www.sogc-construction.com/${locale}/about`,
-                },
-                {
-                  "@type": "ListItem",
-                  position: 3,
-                  name: isArabic ? "خدماتنا" : "Services",
-                  item: `https://www.sogc-construction.com/${locale}/services`,
-                },
-                {
-                  "@type": "ListItem",
-                  position: 4,
-                  name: isArabic ? "مشاريعنا" : "Projects",
-                  item: `https://www.sogc-construction.com/${locale}/projects`,
-                },
-              ],
-            }),
-          }}
-        />
       </head>
       <body
         className="flex overflow-x-hidden flex-col min-h-screen justify-between"
@@ -311,6 +276,7 @@ export default async function LocaleLayout({ children, params }) {
           <HeaderSocial />
           <main className="relative ">
             <Navbar />
+            <Breadcrumb />
             {children}
           </main>
           <Footer />
