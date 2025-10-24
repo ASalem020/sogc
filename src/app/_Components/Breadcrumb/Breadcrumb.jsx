@@ -93,7 +93,7 @@ export default function Breadcrumb() {
       />
       
       {/* Visual Breadcrumb Navigation */}
-      <nav 
+      {/* <nav 
         className="bg-gray-50 border-b border-gray-200 py-3 px-4"
         aria-label="Breadcrumb"
       >
@@ -135,6 +135,7 @@ export default function Breadcrumb() {
           </ol>
         </div>
       </nav>
+       */}
     </>
   );
 }
