@@ -273,10 +273,10 @@ export default async function LocaleLayout({ children, params }) {
         suppressHydrationWarning
       >
         <NextIntlClientProvider messages={messages} locale={locale}>
+            <Breadcrumb />
           <HeaderSocial />
           <main className="relative ">
             <Navbar />
-            <Breadcrumb />
             {children}
           </main>
           <Footer />

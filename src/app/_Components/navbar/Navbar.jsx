@@ -23,7 +23,7 @@ export default function Navbar() {
       if (window.innerWidth < 768) {
         scrollPoint = window.innerHeight * 0.02;
       } else {
-        scrollPoint = window.innerHeight * 0.240;
+        scrollPoint = window.innerHeight * 0.295;
       }
 
       setIsSticky(window.scrollY > scrollPoint);
