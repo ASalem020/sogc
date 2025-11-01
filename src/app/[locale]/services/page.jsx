@@ -6,18 +6,24 @@ import { useTranslations, useLocale } from "next-intl";
 import FadeInAnimation from "../../../components/animations/FadeInAnimation";
 import StaggerAnimation from "../../../components/animations/StaggerAnimation";
 import ParallaxScroll from "../../../components/animations/ParallaxScroll";
+import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 
 
 function FlipButton() {
   const t = useTranslations("services");
   const [isFlipped, setIsFlipped] = useState(false);
-
+  const pathname = usePathname();
+  const locale = useLocale();
+  const isServicesPage = pathname === `/${locale}/services`;
   return (
     <FadeInAnimation direction="up" delay={0.4} duration={0.8}>
-      <button
+      <Link
         className="relative group cursor-pointer perspective w-fit"
         onTouchStart={() => setIsFlipped(true)}
         onTouchEnd={() => setIsFlipped(false)}
+        href={isServicesPage ? `/${locale}/contact` : `#contact`}
+        
       >
         <div
           className={`relative preserve-3d transition-transform duration-500 ${
@@ -29,11 +35,11 @@ function FlipButton() {
           <span className="bg-white border-2 border-black lg:text-lg text-sm cursor-pointer text-black px-6 py-2 rounded-full block backface-hidden">
             {t("requestButton")}
           </span>
-          <span className="bg-black text-white lg:text-lg text-sm px-6 py-2 cursor-pointer rounded-full block absolute inset-0 rotate-x-180 backface-hidden">
+          <span className="bg-black text-white lg:text-lg text-sm px-6 py-2 cursor-pointer text-center rounded-full block absolute inset-0 rotate-x-180 backface-hidden">
             {t("requestButtonFlip")}
           </span>
         </div>
-      </button>
+      </Link>
     </FadeInAnimation>
   );
 }
@@ -75,10 +81,12 @@ function ServiceCard({ service, index }) {
             )}
         </div>
         <div
-          className={`absolute shadow-lg md:p-5 lg:min-h-[145px] flex flex-col gap-2 items-center xl:top-40 2xl:top-50 xl:left-10 xl:right-10 lg:top-45 top-35 lg:left-5 lg:right-5 left-5 right-5 bg-white/80 transition-all duration-500 p-1.5  border-b-black rounded-lg ${
+          className={`absolute shadow-lg md:p-5 lg:min-h-[145px] flex flex-col gap-2 items-center
+             xl:top-40 2xl:top-50 xl:left-10 xl:right-10 lg:top-45 top-35 lg:left-5 lg:right-5 left-5 right-5 
+             bg-white transition-all duration-500 p-1.5  border-b-black rounded-lg ${
             isActive
-              ? "border-b-4 -translate-y-2"
-              : "group-hover:border-b-4 group-hover:-translate-y-2"
+              ? "border-b-4 -translate-y-2 bg-white/80"
+              : "group-hover:border-b-4 group-hover:-translate-y-2 group-hover:bg-white/80"
           }`}
         >
           <h3 className="lg:text-[14px] xl:text-[18px] text-sm font-bold text-center">
@@ -98,11 +106,9 @@ export default function Services() {
   const t = useTranslations("services");
   const locale = useLocale();
   const isArabic = locale === "ar";
-
-  const afterText = isArabic
-    ? "after:content-['الخدمات']"
-    : "after:content-['SERVICES']";
-
+ const pathname = usePathname();
+  const isServicesPage = pathname === "/[locale]/services";
+ 
   const services = [
     {
       id: 1,

@@ -1,12 +1,16 @@
 import "../globals.css";
-import Navbar from "../_Components/navbar/Navbar";
-import Footer from "../_Components/Footer/Footer";
-import HeaderSocial from "../_Components/header-social/HeaderSocial";
-import FloatingContact from "../_Components/FloatingContact/FloatingContact";
-import Breadcrumb from "../_Components/Breadcrumb/Breadcrumb";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
+import {
+  LazyNavbar,
+  LazyFooter,
+  LazyHeaderSocial,
+  LazyFloatingContact,
+  LazyBreadcrumb,
+  LazyLoadingScreen,
+} from "../_Components/LayoutComponents/LayoutComponents";
+import ErrorSuppressor from "../_Components/ErrorSuppressor/ErrorSuppressor";
 
 export const dynamic = 'force-dynamic';
 export const dynamicParams = true;
@@ -69,6 +73,26 @@ export async function generateMetadata({ params, searchParams }) {
         description: isArabic
           ? "اكتشف إجابات لأكثر الأسئلة شيوعًا حول خدمات شركة سوجك للمقاولات والاستشارات. احصل على معلومات مفصلة حول مشاريعنا وخدماتنا."
           : "Find answers to frequently asked questions about SOGC Construction & Consultants services. Get detailed information about our projects and services.",
+      };
+    }
+    if (pathname.includes('/privacy')) {
+      return {
+        title: isArabic 
+          ? "سياسة الخصوصية | شركة سوجك للمقاولات والاستشارات"
+          : "Privacy Policy | SOGC Construction & Consultants",
+        description: isArabic
+          ? "تعرف على سياسة الخصوصية لشركة سوجك للمقاولات والاستشارات. نحن ملتزمون بحماية معلوماتك الشخصية وخصوصيتك."
+          : "Learn about SOGC Construction & Consultants Privacy Policy. We are committed to protecting your personal information and privacy.",
+      };
+    }
+    if (pathname.includes('/terms')) {
+      return {
+        title: isArabic 
+          ? "شروط الاستخدام | شركة سوجك للمقاولات والاستشارات"
+          : "Terms of Service | SOGC Construction & Consultants",
+        description: isArabic
+          ? "اقرأ شروط استخدام موقع شركة سوجك للمقاولات والاستشارات. فهم القواعد والشروط التي تحكم استخدام موقعنا."
+          : "Read the Terms of Service for SOGC Construction & Consultants website. Understand the rules and conditions that govern the use of our site.",
       };
     }
     // Default homepage metadata
@@ -140,6 +164,7 @@ export async function generateMetadata({ params, searchParams }) {
     },
     icons: {
       icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
       apple: "/apple-touch-icon.png",
     },
     openGraph: {
@@ -182,7 +207,7 @@ export default async function LocaleLayout({ children, params }) {
   const messages = await getMessages({ locale });
 
   return (
-    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
+    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} data-scroll-behavior="smooth">
       <head>
         {/* Organization Schema */}
         <script
@@ -251,8 +276,8 @@ export default async function LocaleLayout({ children, params }) {
               },
               geo: {
                 "@type": "GeoCoordinates",
-                latitude: "29.9668",
-                longitude: "32.5498",
+                latitude: "30.303129196166992",
+                longitude: "31.776639938354492",
               },
               url: "https://www.sogc-construction.com",
               openingHoursSpecification: [
@@ -272,16 +297,18 @@ export default async function LocaleLayout({ children, params }) {
         className="flex overflow-x-hidden flex-col min-h-screen justify-between"
         suppressHydrationWarning
       >
+        <LazyLoadingScreen />
         <NextIntlClientProvider messages={messages} locale={locale}>
-            <Breadcrumb />
-          <HeaderSocial />
+          <LazyBreadcrumb />
+          <LazyHeaderSocial />
           <main className="relative ">
-            <Navbar />
+            <LazyNavbar />
             {children}
           </main>
-          <Footer />
-          <FloatingContact />
+          <LazyFooter />
+          <LazyFloatingContact />
         </NextIntlClientProvider>
+        <ErrorSuppressor />
       </body>
     </html>
   );

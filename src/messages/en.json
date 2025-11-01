@@ -228,7 +228,7 @@
     "hours": {
       "title": "Working Hours",
       "weekdays": "Saturday - Thursday",
-      "weekdaysTime": "8:00 AM - 5:00 PM",
+      "weekdaysTime": "9:00 AM - 5:00 PM",
       "friday": "Friday",
       "fridayTime": "Closed"
     },
@@ -245,6 +245,92 @@
     "copyright": "© 2025 SOGC Construction & Consultants. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Page Not Found",
+    "description": "Sorry, the page you are looking for does not exist or has been moved.",
+    "description2": "Please check the URL or navigate back to our homepage.",
+    "button": "Go Back Home",
+    "buttonAlternative": "Return to Homepage"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last Updated: January 2025",
+    "introduction": "SOGC Construction & Consultants ('we', 'our', or 'us') is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.",
+    "sections": {
+      "collection": {
+        "title": "Information We Collect",
+        "content": "We may collect information that you provide directly to us, including your name, email address, phone number, and any other information you choose to provide when contacting us or requesting our services."
+      },
+      "usage": {
+        "title": "How We Use Your Information",
+        "content": "We use the information we collect to provide, maintain, and improve our services, respond to your inquiries, send you updates about our services, and comply with legal obligations."
+      },
+      "protection": {
+        "title": "Information Protection",
+        "content": "We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
+      },
+      "sharing": {
+        "title": "Information Sharing",
+        "content": "We do not sell, trade, or rent your personal information to third parties. We may share your information only with trusted service providers who assist us in operating our website and conducting our business."
+      },
+      "rights": {
+        "title": "Your Rights",
+        "content": "You have the right to access, correct, or delete your personal information at any time. You may also opt-out of receiving communications from us by contacting us directly."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "content": "Our website may use cookies to enhance your experience. You can choose to disable cookies through your browser settings, though this may affect website functionality."
+      },
+      "changes": {
+        "title": "Changes to This Policy",
+        "content": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last Updated' date."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "If you have any questions about this Privacy Policy, please contact us at info@sogc-construction.com or call us at +20 110 346 9000."
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last Updated: January 2025",
+    "introduction": "Please read these Terms of Service ('Terms') carefully before using the SOGC Construction & Consultants website. By accessing or using our website, you agree to be bound by these Terms.",
+    "sections": {
+      "acceptance": {
+        "title": "Acceptance of Terms",
+        "content": "By accessing and using this website, you accept and agree to be bound by these Terms and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using this site."
+      },
+      "services": {
+        "title": "Our Services",
+        "content": "SOGC Construction & Consultants provides construction, consulting, and related services. All services are subject to separate agreements and terms specific to each project or engagement."
+      },
+      "website": {
+        "title": "Website Use",
+        "content": "You may use our website for lawful purposes only. You agree not to use the website in any way that could damage, disable, or impair the website or interfere with any other party's use of the website."
+      },
+      "intellectual": {
+        "title": "Intellectual Property",
+        "content": "All content on this website, including text, graphics, logos, images, and software, is the property of SOGC Construction & Consultants and is protected by copyright and other intellectual property laws."
+      },
+      "liability": {
+        "title": "Limitation of Liability",
+        "content": "SOGC Construction & Consultants shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of this website."
+      },
+      "indemnification": {
+        "title": "Indemnification",
+        "content": "You agree to indemnify and hold harmless SOGC Construction & Consultants from any claims, damages, losses, and expenses arising from your use of the website or violation of these Terms."
+      },
+      "changes": {
+        "title": "Changes to Terms",
+        "content": "We reserve the right to modify these Terms at any time. Your continued use of the website after any changes constitutes acceptance of the new Terms."
+      },
+      "contact": {
+        "title": "Contact Information",
+        "content": "For questions about these Terms, please contact us at info@sogc-construction.com or call +20 110 346 9000."
+      }
+    }
   }
 }
 

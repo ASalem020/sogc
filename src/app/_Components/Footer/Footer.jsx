@@ -173,7 +173,7 @@ export default function Footer() {
           </h3>
           <div className="w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220587.72028538846!2d32.27693842499997!3d29.96666595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14585e8c7b39b1e1%3A0x97517ca551cf6e1e!2sSuez%2C%20Egypt!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+              src="https://www.google.com/maps?q=30.303129196166992,31.776639938354492&z=17&hl=en&output=embed"
               width="100%" 
               height="100%" 
               style={{ border: 0 }}
@@ -193,14 +193,14 @@ export default function Footer() {
             <p className="text-black text-center md:text-left">
               {t('copyright')}
             </p>
-            <div className="flex gap-6">
+            {/* <div className="flex gap-6">
               <Link href={`/${locale}/privacy`} className="text-black active:text-orange-500 hover:text-orange-500 transition-colors">
                 {t('privacy')}
               </Link>
               <Link href={`/${locale}/terms`} className="text-black active:text-orange-500 hover:text-orange-500 transition-colors">
                 {t('terms')}
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

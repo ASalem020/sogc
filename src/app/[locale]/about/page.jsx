@@ -20,12 +20,7 @@ export default function About() {
   const isArabic = locale === "ar";
 
   const services = [
-    {
-      id: 1,
-      title: t("service1.title"),
-      description: t("service1.description"),
-      
-    },
+    
     {
       id: 2,
       title: t("service2.title"),
@@ -36,21 +31,13 @@ export default function About() {
       title: t("service3.title"),
       description: t("service3.description"),
     },
-    {
-      id: 4,
-      title: t("service4.title"),
-      description: t("service4.description"),
-    },
+    
     {
       id: 5,
       title: t("service5.title"),
       description: t("service5.description"),
     },
-    {
-      id: 6,
-      title: t("service6.title"),
-      description: t("service6.description"),
-    },
+    
   ];
 
   return (
@@ -161,13 +148,13 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <div className="relative w-full max-h-[400px] md:max-h-full flex justify-center items-center">
+              <div className="relative w-full max-h-[300px] md:max-h-full flex justify-center items-center">
                 <Image
                   src="/png 1.png"
                   alt="about"
                   width={1200}
                   height={1200}
-                  className="w-full max-h-[200px]  md:max-h-[400px] object-contain"
+                  className="w-full max-h-[200px]  md:max-h-[280px] object-contain"
                 />
               </div>
             </motion.div>

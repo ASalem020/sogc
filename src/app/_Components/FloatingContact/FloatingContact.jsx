@@ -41,7 +41,7 @@ export default function FloatingContact() {
       id: 4,
       icon: <FaMapMarkerAlt className="text-white text-xl" />,
       label: isArabic ? "موقعنا" : "Location",
-      href: "https://maps.google.com/?q=Suez,Egypt",
+      href: "https://maps.app.goo.gl/ssUaRtV7mer3r2du8",
       bgColor: "bg-orange-500 hover:bg-orange-600",
     },
   ];

@@ -19,7 +19,7 @@ export default function FAQSection() {
   const faqs = t.raw('items');
 
   return (
-    <section className="bg-gray-50 py-20 px-4 md:px-10">
+    <section className="  px-4 md:px-10">
       <div className="max-w-3xl mx-auto text-center mb-12">
         <h2 className="text-4xl font-bold mb-4">{t('title')}</h2>
         <p className="text-gray-600">
@@ -27,7 +27,7 @@ export default function FAQSection() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-4 max-w-2xl mx-auto">
+      <div className="flex flex-col gap-4 max-w-3xl mx-auto">
         {faqs.map((faq, index) => (
           <Drawer key={index}>
             <DrawerTrigger asChild>
